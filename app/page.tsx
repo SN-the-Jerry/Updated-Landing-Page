@@ -1,14 +1,17 @@
+"use client" 
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Card, CardContent } from "@/components/ui/card"
 import { School, BookOpen, BarChart, Target, Users, TrendingUp, DollarSign, Facebook, Mail, Phone } from "lucide-react"
+import { motion } from "framer-motion"
+
 
 export default function Home() {
   return (
     <main className="flex min-h-screen flex-col">
       {/* Navbar */}
-      <nav className="sticky top-0 z-50 bg-gradient-to-r from-[#56CCF2] to-[#2F80ED] shadow-sm">
+      <nav className="sticky top-0 z-50 bg-gradient-to-r from-[#56CCF2] to-[#2F80ED] shadow-sm backdrop-blur-md bg-opacity-90">
         <div className="container mx-auto px-8 py-0.1 flex justify-between items-center">
           <div className="flex items-center">
             <Image
@@ -16,28 +19,42 @@ export default function Home() {
               alt="Unicoach AI Logo"
               width={150}
               height={40}
-              className="mr-2"
+              className="mr-2 transition-transform duration-300 hover:scale-105"
             />
           </div>
+          <button className="md:hidden text-white p-2 rounded-lg hover:bg-white/10">
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16m-16 6h16" />
+            </svg>
+          </button>
+
           <div className=" hidden md:flex space-x-6 ">
             <a href="#home" className="text-white hover:text-primary">
-             บ้าน
+              บ้าน
             </a>
             <a href="#about" className="text-white hover:text-primary">
-             กี่ยวกับ
+              กี่ยวกับ
             </a>
             <a href="#courses" className="text-white hover:text-primary">
-             หลักสูตร
+              หลักสูตร
             </a>
             <a href="#contact" className="text-white hover:text-primary">
-             ติดต่อ
+              ติดต่อ
             </a>
           </div>
         </div>
-      </nav>
+      </nav >
 
-      {/* Hero Section */}
-      <section className="bg-background py-16 md:py-24">
+      
+       <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5 }}
+       >
+        {/* Hero Section */}
+
+      < section className="bg-background py-16 md:py-24" >
         <div className="container mx-auto px-8 grid md:grid-cols-2 gap-8 items-center">
           <div>
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">เตรียมสอบเข้าโรงเรียนด้วย AI ที่เข้าใจคุณ</h1>
@@ -53,7 +70,7 @@ export default function Home() {
                   className="h-9"
                 />
               </a>
-              <a href="https://www.facebook.com/unicoach" target="_blank" rel="noopener noreferrer">
+              <a href="https://www.facebook.com/UniclassEducation" target="_blank" rel="noopener noreferrer">
                 <Button
                   variant="outline"
                   className="bg-secondary text-white hover:bg-secondary hover:text-white"
@@ -73,15 +90,16 @@ export default function Home() {
             />
           </div>
         </div>
-      </section>
+      </section >
+       </motion.div>
 
       {/* Problem-Solution Section */}
-      <section className="py-16 bg-white">
+      < section className="py-16 bg-white" >
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-center mb-12">ปัญหาการเตรียมสอบแบบเดิม vs Unicoach AI</h2>
 
-          <div className="grid md:grid-cols-2 gap-8">
-            <div className="bg-red-50 p-6 rounded-lg">
+          <div className="grid md:grid-cols-2 gap-8 perspective-1000">
+            <div className="bg-red-50 p-8 rounded-2xl shadow-xl transform transition-all duration-300 hover:-translate-y-2">
               <h3 className="text-xl font-semibold mb-4 text-red-600">ปัญหาการเตรียมสอบแบบเดิม</h3>
               <ul className="space-y-3">
                 <li className="flex items-start">
@@ -105,9 +123,10 @@ export default function Home() {
                   <span>เวลาจำกัดในการเรียนรู้</span>
                 </li>
               </ul>
+              
             </div>
 
-            <div className="bg-green-50 p-6 rounded-lg">
+            <div className="bg-green-50 p-8 rounded-2xl shadow-xl transform transition-all duration-300 hover:-translate-y-2">
               <h3 className="text-xl font-semibold mb-4 text-green-600">วิธีแก้ปัญหาด้วย Unicoach AI</h3>
               <ul className="space-y-3">
                 <li className="flex items-start">
@@ -134,14 +153,14 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </section>
+      </section >
 
       {/* How It Works Section */}
-      <section id="how-it-works" className="py-16 bg-background">
+      < section id="how-it-works" className="py-16 bg-background" >
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-center mb-12">วิธีการใช้งาน Unicoach AI</h2>
 
-          <div className="grid md:grid-cols-4 gap-6">
+          <div className="grid md:grid-cols-4 gap-6 relative">
             <div className="bg-white p-6 rounded-lg shadow-sm text-center">
               <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
                 <School className="h-8 w-8 text-primary" />
@@ -175,10 +194,10 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </section>
+      </section >
 
       {/* Target Schools Showcase */}
-      <section id="schools" className="py-16 bg-white">
+      < section id="schools" className="py-16 bg-white" >
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-center mb-12">โรงเรียนเป้าหมาย</h2>
 
@@ -241,15 +260,16 @@ export default function Home() {
             </TabsContent>
           </Tabs>
         </div>
-      </section>
+      </section >
 
       {/* Features & Benefits */}
-      <section id="features" className="py-16 bg-background">
+
+      < section id="features" className="py-16 bg-background" >
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-center mb-12">คุณสมบัติและประโยชน์</h2>
 
           <div className="grid md:grid-cols-2 gap-8">
-            <div className="bg-white p-6 rounded-lg shadow-sm">
+            <div className="bg-white p-6 rounded-lg shadow-sm transition-shadow duration-500 hover:shadow-md">
               <div className="flex items-start mb-4">
                 <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mr-4">
                   <BarChart className="h-6 w-6 text-primary" />
@@ -261,7 +281,7 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="bg-white p-6 rounded-lg shadow-sm">
+            <div className="bg-white p-6 rounded-lg shadow-sm transition-shadow duration-500 hover:shadow-md">
               <div className="flex items-start mb-4">
                 <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mr-4">
                   <Users className="h-6 w-6 text-primary" />
@@ -273,7 +293,7 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="bg-white p-6 rounded-lg shadow-sm">
+            <div className="bg-white p-6 rounded-lg shadow-sm transition-shadow duration-500 hover:shadow-md">
               <div className="flex items-start mb-4">
                 <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mr-4">
                   <TrendingUp className="h-6 w-6 text-primary" />
@@ -285,7 +305,7 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="bg-white p-6 rounded-lg shadow-sm">
+            <div className="bg-white p-6 rounded-lg shadow-sm transition-shadow duration-500 hover:shadow-md">
               <div className="flex items-start mb-4">
                 <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mr-4">
                   <DollarSign className="h-6 w-6 text-primary" />
@@ -298,15 +318,15 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </section>
+      </section >
 
       {/* Social Proof */}
-      <section id="testimonials" className="py-16 bg-white">
+      < section id="testimonials" className="py-16 bg-white" >
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-center mb-12">เสียงจากผู้ใช้งานจริง</h2>
 
           <div className="grid md:grid-cols-3 gap-6">
-            <div className="bg-background p-6 rounded-lg">
+            <div className="bg-background p-6 rounded-lg transition-shadow duration-500 hover:shadow-md">
               <div className="flex items-center mb-4">
                 <div className="w-12 h-12 bg-gray-200 rounded-full overflow-hidden mr-4">
                   <Image src="/per1.jpg?height=48&width=48" alt="นักเรียน" width={48} height={48} />
@@ -321,7 +341,7 @@ export default function Home() {
               </p>
             </div>
 
-            <div className="bg-background p-6 rounded-lg">
+            <div className="bg-background p-6 rounded-lg transition-shadow duration-500 hover:shadow-md">
               <div className="flex items-center mb-4">
                 <div className="w-12 h-12 bg-gray-200 rounded-full overflow-hidden mr-4">
                   <Image src="/per2.jpg?height=48&width=48" alt="นักเรียน" width={48} height={48} />
@@ -336,7 +356,7 @@ export default function Home() {
               </p>
             </div>
 
-            <div className="bg-background p-6 rounded-lg">
+            <div className="bg-background p-6 rounded-lg transition-shadow duration-500 hover:shadow-md">
               <div className="flex items-center mb-4">
                 <div className="w-12 h-12 bg-gray-200 rounded-full overflow-hidden mr-4">
                   <Image src="/per3.jpg?height=48&width=48" alt="ผู้ปกครอง" width={48} height={48} />
@@ -352,10 +372,10 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </section>
+      </section >
 
       {/* Partners & Support */}
-      <section className="py-16 bg-background">
+      < section className="py-16 bg-background" >
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-center mb-12">พันธมิตรและการสนับสนุน</h2>
 
@@ -394,10 +414,10 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </section>
+      </section >
 
       {/* Final CTA */}
-      <section className="py-16 bg-gradient-to-r from-[#0575E6] to-[#021B79] text-white">
+      < section className="py-16 bg-gradient-to-r from-[#0575E6] to-[#021B79] text-white" >
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl font-bold mb-6">พร้อมเริ่มต้นการเตรียมสอบแบบใหม่กับ Unicoach AI?</h2>
           <p className="text-xl mb-8 max-w-2xl mx-auto">
@@ -421,10 +441,10 @@ export default function Home() {
             </a>
           </div>
         </div>
-      </section>
+      </section >
 
       {/* Footer */}
-      <footer className="bg-gray-900 text-white py-12">
+      < footer className="bg-gray-900 text-white py-12" >
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-4 gap-8">
             <div>
@@ -576,8 +596,8 @@ export default function Home() {
             <p className="text-gray-400">&copy; {new Date().getFullYear()} Unicoach AI. สงวนลิขสิทธิ์ทั้งหมด.</p>
           </div>
         </div>
-      </footer>
-    </main>
+      </footer >
+    </main >
   )
 }
 

@@ -79,3 +79,9 @@
   font-family: "IBM Plex Sans Thai", sans-serif;
 }
 
+.swiper-pagination-bullet {
+  @apply bg-primary opacity-50 !important;
+}
+.swiper-pagination-bullet-active {
+  @apply bg-primary opacity-100 !important;
+}
