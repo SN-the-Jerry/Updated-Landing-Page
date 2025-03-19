@@ -198,7 +198,7 @@ export default function Home() {
       </section >
 
       {/* Target Schools Showcase */}
-      < section id="schools" className="py-16 bg-[#021B79] bg-primary/20" >
+      < section id="schools" className="py-16 bg-[#021B79]" >
         <div className="container mx-auto px-4">
           <h2 className="text-3xl text-white font-bold text-center mb-12 text-primary">โรงเรียนเป้าหมาย</h2>
 
