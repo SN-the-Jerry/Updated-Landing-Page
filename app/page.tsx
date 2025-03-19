@@ -1,4 +1,4 @@
-"use client" 
+"use client"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
@@ -11,7 +11,7 @@ export default function Home() {
   return (
     <main className="flex min-h-screen flex-col">
       {/* Navbar */}
-      <nav className="sticky top-0 z-50 bg-gradient-to-r from-[#56CCF2] to-[#2F80ED] shadow-sm backdrop-blur-md bg-opacity-90">
+      <nav className="sticky top-0 z-50 bg-gradient-to-r from-[#0575E6] to-[#021B79] shadow-sm backdrop-blur-md bg-opacity-90">
         <div className="container mx-auto px-8 py-0.1 flex justify-between items-center">
           <div className="flex items-center">
             <Image
@@ -45,108 +45,109 @@ export default function Home() {
         </div>
       </nav >
 
-      
-       <motion.div
+
+      <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5 }}
-       >
+      >
         {/* Hero Section */}
 
-      < section className="bg-background py-16 md:py-24" >
-        <div className="container mx-auto px-8 grid md:grid-cols-2 gap-8 items-center">
-          <div>
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">เตรียมสอบเข้าโรงเรียนด้วย AI ที่เข้าใจคุณ</h1>
-            <p className="text-xl text-gray-700 mb-8">
-              Unicoach AI ช่วยให้นักเรียนเตรียมสอบเข้าโรงเรียนได้อย่างมีประสิทธิภาพ ด้วยการวิเคราะห์จุดแข็งจุดอ่อนและสร้างแบบฝึกหัดเฉพาะบุคคล
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <a href="https://lin.ee/ZS4OG1u" target="_blank" rel="noopener noreferrer">
-                <img
-                  src="https://scdn.line-apps.com/n/line_add_friends/btn/th.png"
-                  alt="เพิ่มเพื่อน"
-                  height="36"
-                  className="h-9"
-                />
-              </a>
-              <a href="https://www.facebook.com/UniclassEducation" target="_blank" rel="noopener noreferrer">
-                <Button
-                  variant="outline"
-                  className="bg-secondary text-white hover:bg-secondary hover:text-white"
-                >
-                  <Facebook className="mr-2 h-4 w-4" />
-                  Facebook
-                </Button>
-              </a>
+        < section className="bg-white py-16 md:py-24" >
+
+          <div className="container mx-auto px-8 grid md:grid-cols-2 gap-8 items-center">
+            <div>
+              <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">เตรียมสอบเข้าโรงเรียนด้วย AI ที่เข้าใจคุณ</h1>
+              <p className="text-xl text-gray-700 mb-8">
+                Unicoach AI ช่วยให้นักเรียนเตรียมสอบเข้าโรงเรียนได้อย่างมีประสิทธิภาพ ด้วยการวิเคราะห์จุดแข็งจุดอ่อนและสร้างแบบฝึกหัดเฉพาะบุคคล
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <a href="https://lin.ee/ZS4OG1u" target="_blank" rel="noopener noreferrer">
+                  <img
+                    src="https://scdn.line-apps.com/n/line_add_friends/btn/th.png"
+                    alt="เพิ่มเพื่อน"
+                    height="35"
+                    className="h-9"
+                  />
+                </a>
+                <a href="https://www.facebook.com/UniclassEducation" target="_blank" rel="noopener noreferrer">
+                  <Button
+                    variant="outline"
+                    className="bg-secondary text-white hover:bg-secondary hover:text-white"
+                  >
+                    <Facebook className="mr-2 h-4 w-4" />
+                    Facebook
+                  </Button>
+                </a>
+              </div>
+            </div>
+            <div className="relative h-[300px] md:h-[400px]">
+              <Image
+                src="/ai_hero.jpg"
+                alt="นักเรียนกำลังใช้ Unicoach AI"
+                fill
+                className="object-contain"
+              />
             </div>
           </div>
-          <div className="relative h-[300px] md:h-[400px]">
-            <Image
-              src="/ai_hero.jpg"
-              alt="นักเรียนกำลังใช้ Unicoach AI"
-              fill
-              className="object-contain"
-            />
-          </div>
-        </div>
-      </section >
-       </motion.div>
+        </section >
+      </motion.div>
 
       {/* Problem-Solution Section */}
-      < section className="py-16 bg-white" >
+      < section className="py-16 bg-[#021B79]" >
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12">ปัญหาการเตรียมสอบแบบเดิม vs Unicoach AI</h2>
+          <h2 className="text-3xl text-white font-bold text-center mb-12">ปัญหาการเตรียมสอบแบบเดิม vs Unicoach AI</h2>
 
           <div className="grid md:grid-cols-2 gap-8 perspective-1000">
-            <div className="bg-red-50 p-8 rounded-2xl shadow-xl transform transition-all duration-300 hover:-translate-y-2">
-              <h3 className="text-xl font-semibold mb-4 text-red-600">ปัญหาการเตรียมสอบแบบเดิม</h3>
+            <div className="bg-gradient-to-l from-[#2193b0] to-[#6dd5ed] p-8 rounded-2xl shadow-xl transform transition-all duration-300 hover:-translate-y-2 border border-[#261FB3]">
+              <h3 className="text-xl font-semibold mb-4 text-black">ปัญหาการเตรียมสอบแบบเดิม</h3>
               <ul className="space-y-3">
                 <li className="flex items-start">
-                  <span className="text-red-500 mr-2">✖</span>
+                  <span className="text-primary mr-2">✖</span>
                   <span>เรียนเนื้อหาเดิมซ้ำๆ ไม่ตรงจุดอ่อน</span>
                 </li>
                 <li className="flex items-start">
-                  <span className="text-red-500 mr-2">✖</span>
+                  <span className="text-primary mr-2">✖</span>
                   <span>ค่าใช้จ่ายสูงในการเรียนพิเศษ</span>
                 </li>
                 <li className="flex items-start">
-                  <span className="text-red-500 mr-2">✖</span>
+                  <span className="text-primary mr-2">✖</span>
                   <span>ไม่มีข้อมูลวิเคราะห์ความก้าวหน้า</span>
                 </li>
                 <li className="flex items-start">
-                  <span className="text-red-500 mr-2">✖</span>
+                  <span className="text-primary mr-2">✖</span>
                   <span>ไม่มีแนวข้อสอบเฉพาะโรงเรียน</span>
                 </li>
                 <li className="flex items-start">
-                  <span className="text-red-500 mr-2">✖</span>
+                  <span className="text-primary mr-2">✖</span>
                   <span>เวลาจำกัดในการเรียนรู้</span>
                 </li>
               </ul>
-              
+
             </div>
 
-            <div className="bg-green-50 p-8 rounded-2xl shadow-xl transform transition-all duration-300 hover:-translate-y-2">
-              <h3 className="text-xl font-semibold mb-4 text-green-600">วิธีแก้ปัญหาด้วย Unicoach AI</h3>
+            <div className="bg-gradient-to-l from-[#2193b0] to-[#6dd5ed] p-8 rounded-2xl shadow-xl transform transition-all duration-300 hover:-translate-y-2 border border-[#261FB3]">
+              <h3 className="text-xl font-semibold mb-4 text-black">วิธีแก้ปัญหาด้วย Unicoach AI</h3>
               <ul className="space-y-3">
                 <li className="flex items-start">
-                  <span className="text-green-500 mr-2">✓</span>
+                  <span className="text-primary mr-2">✓</span>
                   <span>AI วิเคราะห์จุดอ่อนและสร้างแบบฝึกหัดเฉพาะบุคคล</span>
                 </li>
                 <li className="flex items-start">
-                  <span className="text-green-500 mr-2">✓</span>
+                  <span className="text-primary mr-2">✓</span>
                   <span>ราคาประหยัดกว่าการเรียนพิเศษแบบเดิม</span>
                 </li>
                 <li className="flex items-start">
-                  <span className="text-green-500 mr-2">✓</span>
+                  <span className="text-primary mr-2">✓</span>
                   <span>ติดตามความก้าวหน้าด้วยข้อมูลเชิงลึก</span>
                 </li>
                 <li className="flex items-start">
-                  <span className="text-green-500 mr-2">✓</span>
+                  <span className="text-primary mr-2">✓</span>
                   <span>แนวข้อสอบเฉพาะโรงเรียนที่ต้องการสอบเข้า</span>
                 </li>
                 <li className="flex items-start">
-                  <span className="text-green-500 mr-2">✓</span>
+                  <span className="text-primary mr-2">✓</span>
                   <span>เรียนรู้ได้ทุกที่ทุกเวลาตามความต้องการ</span>
                 </li>
               </ul>
@@ -156,50 +157,50 @@ export default function Home() {
       </section >
 
       {/* How It Works Section */}
-      < section id="how-it-works" className="py-16 bg-background" >
+      < section id="how-it-works" className="py-16 bg-white" >
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12">วิธีการใช้งาน Unicoach AI</h2>
+          <h2 className="text-3xl font-bold text-center mb-12 text-black">วิธีการใช้งาน Unicoach AI</h2>
 
           <div className="grid md:grid-cols-4 gap-6 relative">
-            <div className="bg-white p-6 rounded-lg shadow-sm text-center">
-              <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+            <div className="bg-gradient-to-r from-[#2193b0] to-[#6dd5ed] p-6 rounded-lg shadow-sm transform transition-all duration-300 hover:-translate-y-2 text-center border border-[#261FB3]">
+              <div className="w-16 h-16 bg-gray-700 rounded-full flex items-center justify-center mx-auto mb-4">
                 <School className="h-8 w-8 text-primary" />
               </div>
               <h3 className="text-xl font-semibold mb-2">1. เลือกโรงเรียน</h3>
-              <p className="text-gray-600">เลือกโรงเรียนที่ต้องการสอบเข้าจากรายชื่อโรงเรียนชั้นนำทั่วประเทศ</p>
+              <p className="text-black">เลือกโรงเรียนที่ต้องการสอบเข้าจากรายชื่อโรงเรียนชั้นนำทั่วประเทศ</p>
             </div>
 
-            <div className="bg-white p-6 rounded-lg shadow-sm text-center">
-              <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+            <div className="bg-gradient-to-r from-[#2193b0] to-[#6dd5ed] p-6 rounded-lg shadow-sm transform transition-all duration-300 hover:-translate-y-2 text-center border border-[#261FB3]">
+              <div className="w-16 h-16 bg-gray-700 rounded-full flex items-center justify-center mx-auto mb-4">
                 <BookOpen className="h-8 w-8 text-primary" />
               </div>
               <h3 className="text-xl font-semibold mb-2">2. ทำแบบทดสอบ</h3>
-              <p className="text-gray-600">ทำแบบทดสอบเพื่อประเมินความรู้พื้นฐานและจุดแข็งจุดอ่อน</p>
+              <p className="text-black">ทำแบบทดสอบเพื่อประเมินความรู้พื้นฐานและจุดแข็งจุดอ่อน</p>
             </div>
 
-            <div className="bg-white p-6 rounded-lg shadow-sm text-center">
-              <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+            <div className="bg-gradient-to-r from-[#2193b0] to-[#6dd5ed] p-6 rounded-lg shadow-sm transform transition-all duration-300 hover:-translate-y-2 text-center border border-[#261FB3]">
+              <div className="w-16 h-16 bg-gray-700 rounded-full flex items-center justify-center mx-auto mb-4">
                 <BarChart className="h-8 w-8 text-primary" />
               </div>
               <h3 className="text-xl font-semibold mb-2">3. AI วิเคราะห์</h3>
-              <p className="text-gray-600">AI วิเคราะห์ผลการทดสอบและระบุจุดที่ต้องพัฒนา</p>
+              <p className="text-black">AI วิเคราะห์ผลการทดสอบและระบุจุดที่ต้องพัฒนา</p>
             </div>
 
-            <div className="bg-white p-6 rounded-lg shadow-sm text-center">
-              <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+            <div className="bg-gradient-to-r from-[#2193b0] to-[#6dd5ed] p-6 rounded-lg shadow-sm transform transition-all duration-300 hover:-translate-y-2 text-center border border-[#261FB3]">
+              <div className="w-16 h-16 bg-gray-700 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Target className="h-8 w-8 text-primary" />
               </div>
               <h3 className="text-xl font-semibold mb-2">4. ฝึกฝนเฉพาะบุคคล</h3>
-              <p className="text-gray-600">รับแบบฝึกหัดที่ปรับให้เหมาะกับคุณและโรงเรียนที่ต้องการสอบเข้า</p>
+              <p className="text-black">รับแบบฝึกหัดที่ปรับให้เหมาะกับคุณและโรงเรียนที่ต้องการสอบเข้า</p>
             </div>
           </div>
         </div>
       </section >
 
       {/* Target Schools Showcase */}
-      < section id="schools" className="py-16 bg-white" >
+      < section id="schools" className="py-16 bg-[#021B79] bg-primary/20" >
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12">โรงเรียนเป้าหมาย</h2>
+          <h2 className="text-3xl text-white font-bold text-center mb-12 text-primary">โรงเรียนเป้าหมาย</h2>
 
           <Tabs defaultValue="m1" className="w-full">
             <div className="flex justify-center mb-8">
@@ -222,14 +223,23 @@ export default function Home() {
                   "โรงเรียนโยธินบูรณะ",
                   "โรงเรียนบดินทรเดชา",
                   "โรงเรียนโพธิสารพิทยากร",
-                  "โรงเรียนนวมินทราชินูทิศ สตรีวิทยา",
+                  "โรงเรียนนวมินทราชินูทิศสตรีวิทยา",
                   "โรงเรียนสตรีวิทยา",
                   "โรงเรียนเตรียมอุดมศึกษาพัฒนาการ",
                 ].map((school, index) => (
                   <Card key={index} className="overflow-hidden">
                     <CardContent className="p-4 flex flex-col items-center">
-                      <div className="w-16 h-16 bg-background rounded-full flex items-center justify-center mb-3">
-                        <School className="h-8 w-8 text-secondary" />
+                      <div className="w-16 h-16 bg-background rounded-full flex items-center justify-center mb-3 overflow-hidden ">
+                        <img
+                          src={`/university_images/${school.toLowerCase().replace(/ /g, "-")}.jpg`} // Adjust the file extension if needed
+                          alt={school}
+                          className="w-full h-full object-cover"
+                          onError={(e) => {
+                            e.target.onerror = null; // Prevent infinite loop
+                            e.target.src = "/university_images/default.ppg"; // Fallback image
+                          }}
+                        />
+
                       </div>
                       <h3 className="text-center text-sm font-medium">{school}</h3>
                     </CardContent>
@@ -245,12 +255,20 @@ export default function Home() {
                   "โรงเรียนมหิดลวิทยานุสรณ์",
                   "โรงเรียนกำเนิดวิทย์",
                   "โรงเรียนวิทยาศาสตร์จุฬาภรณราชวิทยาลัย",
-                  "โรงเรียนสาธิตมหาวิทยาลัยศรีนครินทรวิโรฒ ประสานมิตร",
+                  "โรงเรียนสาธิตมหาวิทยาลัยศรีนครินทรวิโรฒประสานมิตร",
                 ].map((school, index) => (
                   <Card key={index} className="overflow-hidden">
                     <CardContent className="p-4 flex flex-col items-center">
-                      <div className="w-16 h-16 bg-background rounded-full flex items-center justify-center mb-3">
-                        <School className="h-8 w-8 text-secondary" />
+                      <div className="w-16 h-16 bg-background rounded-full flex items-center justify-center mb-3 overflow-hidden">
+                        <img
+                          src={`/university_images/${school.toLowerCase().replace(/ /g, "-")}.jpg`} // Corrected path and replace
+                          alt={school}
+                          className="w-full h-full object-cover"
+                          onError={(e) => {
+                            e.target.onerror = null; // Prevent infinite loop
+                            e.target.src = "/university_images/default.png"; // Fallback image
+                          }}
+                        />
                       </div>
                       <h3 className="text-center text-sm font-medium">{school}</h3>
                     </CardContent>
@@ -264,55 +282,58 @@ export default function Home() {
 
       {/* Features & Benefits */}
 
-      < section id="features" className="py-16 bg-background" >
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12">คุณสมบัติและประโยชน์</h2>
+      < section id="features" className="py-16 bg-white" >
+
+        <div className="container mx-auto px-4 relative z-10">
+          <h2 className="text-3xl font-bold text-center mb-12">
+            <span className="/10 px-4 py-2 rounded-full">
+              คุณสมบัติและประโยชน์ </span></h2>
 
           <div className="grid md:grid-cols-2 gap-8">
-            <div className="bg-white p-6 rounded-lg shadow-sm transition-shadow duration-500 hover:shadow-md">
+            <div className="bg-gradient-to-l from-[#2193b0] to-[#6dd5ed] p-6 rounded-lg shadow-sm transform transition-all duration-300 hover:-translate-y-2 border border-[#261FB3]">
               <div className="flex items-start mb-4">
-                <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mr-4">
+                <div className="w-12 h-12 bg-gray-700 rounded-full flex items-center justify-center mr-4">
                   <BarChart className="h-6 w-6 text-primary" />
                 </div>
                 <div>
                   <h3 className="text-xl font-semibold mb-2">AI วิเคราะห์จุดแข็งจุดอ่อน</h3>
-                  <p className="text-gray-600">ระบบ AI วิเคราะห์ผลการทำแบบทดสอบและระบุจุดที่ต้องพัฒนาอย่างแม่นยำ</p>
+                  <p className="text-black">ระบบ AI วิเคราะห์ผลการทำแบบทดสอบและระบุจุดที่ต้องพัฒนาอย่างแม่นยำ</p>
                 </div>
               </div>
             </div>
 
-            <div className="bg-white p-6 rounded-lg shadow-sm transition-shadow duration-500 hover:shadow-md">
+            <div className="bg-gradient-to-l from-[#2193b0] to-[#6dd5ed] p-6 rounded-lg shadow-sm transform transition-all duration-300 hover:-translate-y-2 border border-[#261FB3]">
               <div className="flex items-start mb-4">
-                <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mr-4">
+                <div className="w-12 h-12 bg-gray-700 rounded-full flex items-center justify-center mr-4">
                   <Users className="h-6 w-6 text-primary" />
                 </div>
                 <div>
                   <h3 className="text-xl font-semibold mb-2">การเรียนรู้เฉพาะบุคคล</h3>
-                  <p className="text-gray-600">แบบฝึกหัดและเนื้อหาที่ปรับให้เหมาะกับความต้องการเฉพาะของนักเรียนแต่ละคน</p>
+                  <p className="text-black">แบบฝึกหัดและเนื้อหาที่ปรับให้เหมาะกับความต้องการเฉพาะของนักเรียนแต่ละคน</p>
                 </div>
               </div>
             </div>
 
-            <div className="bg-white p-6 rounded-lg shadow-sm transition-shadow duration-500 hover:shadow-md">
+            <div className="bg-gradient-to-l from-[#2193b0] to-[#6dd5ed] p-6 rounded-lg shadow-sm transform transition-all duration-300 hover:-translate-y-2 border border-[#261FB3]">
               <div className="flex items-start mb-4">
-                <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mr-4">
+                <div className="w-12 h-12 bg-gray-700 rounded-full flex items-center justify-center mr-4">
                   <TrendingUp className="h-6 w-6 text-primary" />
                 </div>
                 <div>
                   <h3 className="text-xl font-semibold mb-2">ติดตามความก้าวหน้า</h3>
-                  <p className="text-gray-600">ดูพัฒนาการและความก้าวหน้าในการเรียนรู้ด้วยกราฟและข้อมูลเชิงลึก</p>
+                  <p className="text-black">ดูพัฒนาการและความก้าวหน้าในการเรียนรู้ด้วยกราฟและข้อมูลเชิงลึก</p>
                 </div>
               </div>
             </div>
 
-            <div className="bg-white p-6 rounded-lg shadow-sm transition-shadow duration-500 hover:shadow-md">
+            <div className="bg-gradient-to-l from-[#2193b0] to-[#6dd5ed] p-6 rounded-lg shadow-sm transform transition-all duration-300 hover:-translate-y-2 border border-[#261FB3]">
               <div className="flex items-start mb-4">
-                <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mr-4">
+                <div className="w-12 h-12 bg-gray-700 rounded-full flex items-center justify-center mr-4">
                   <DollarSign className="h-6 w-6 text-primary" />
                 </div>
                 <div>
                   <h3 className="text-xl font-semibold mb-2">คุ้มค่าคุ้มราคา</h3>
-                  <p className="text-gray-600">ประหยัดค่าใช้จ่ายมากกว่าการเรียนพิเศษแบบเดิม ได้ผลลัพธ์ที่ดีกว่า</p>
+                  <p className="text-black">ประหยัดค่าใช้จ่ายมากกว่าการเรียนพิเศษแบบเดิม ได้ผลลัพธ์ที่ดีกว่า</p>
                 </div>
               </div>
             </div>
@@ -321,52 +342,52 @@ export default function Home() {
       </section >
 
       {/* Social Proof */}
-      < section id="testimonials" className="py-16 bg-white" >
+      < section id="testimonials" className="py-16 bg-[#021B79]" >
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12">เสียงจากผู้ใช้งานจริง</h2>
+          <h2 className="text-3xl text-white font-bold text-center mb-12">เสียงจากผู้ใช้งานจริง</h2>
 
           <div className="grid md:grid-cols-3 gap-6">
-            <div className="bg-background p-6 rounded-lg transition-shadow duration-500 hover:shadow-md">
+            <div className="bg-gradient-to-r from-[#6dd5ed] to-[#2193b0] p-6 rounded-lg transform transition-all duration-300 hover:-translate-y-2">
               <div className="flex items-center mb-4">
                 <div className="w-12 h-12 bg-gray-200 rounded-full overflow-hidden mr-4">
                   <Image src="/per1.jpg?height=48&width=48" alt="นักเรียน" width={48} height={48} />
                 </div>
                 <div>
                   <h3 className="font-semibold">น้องมิน</h3>
-                  <p className="text-sm text-gray-500">สอบติดโรงเรียนเตรียมอุดมศึกษา</p>
+                  <p className="text-sm text-black">สอบติดโรงเรียนเตรียมอุดมศึกษา</p>
                 </div>
               </div>
-              <p className="text-gray-600 italic">
+              <p className="text-black italic">
                 "Unicoach AI ช่วยให้หนูเข้าใจจุดอ่อนของตัวเองและฝึกฝนได้ตรงจุด ทำให้สอบติดโรงเรียนในฝันได้สำเร็จ"
               </p>
             </div>
 
-            <div className="bg-background p-6 rounded-lg transition-shadow duration-500 hover:shadow-md">
+            <div className="bg-gradient-to-r from-[#6dd5ed] to-[#2193b0] p-6 rounded-lg transform transition-all duration-300 hover:-translate-y-2">
               <div className="flex items-center mb-4">
                 <div className="w-12 h-12 bg-gray-200 rounded-full overflow-hidden mr-4">
                   <Image src="/per2.jpg?height=48&width=48" alt="นักเรียน" width={48} height={48} />
                 </div>
                 <div>
                   <h3 className="font-semibold">น้องเบนซ์</h3>
-                  <p className="text-sm text-gray-500">สอบติดโรงเรียนสวนกุหลาบวิทยาลัย</p>
+                  <p className="text-sm text-black">สอบติดโรงเรียนสวนกุหลาบวิทยาลัย</p>
                 </div>
               </div>
-              <p className="text-gray-600 italic">
+              <p className="text-black italic">
                 "ผมชอบที่ Unicoach AI มีแนวข้อสอบเฉพาะของโรงเรียนที่ผมอยากเข้า ทำให้เตรียมตัวได้ตรงจุดมากๆ"
               </p>
             </div>
 
-            <div className="bg-background p-6 rounded-lg transition-shadow duration-500 hover:shadow-md">
+            <div className="bg-gradient-to-r from-[#6dd5ed] to-[#2193b0] p-6 rounded-lg transform transition-all duration-300 hover:-translate-y-2">
               <div className="flex items-center mb-4">
                 <div className="w-12 h-12 bg-gray-200 rounded-full overflow-hidden mr-4">
                   <Image src="/per3.jpg?height=48&width=48" alt="ผู้ปกครอง" width={48} height={48} />
                 </div>
                 <div>
                   <h3 className="font-semibold">คุณแม่น้องแพร</h3>
-                  <p className="text-sm text-gray-500">ผู้ปกครอง</p>
+                  <p className="text-sm text-black">ผู้ปกครอง</p>
                 </div>
               </div>
-              <p className="text-gray-600 italic">
+              <p className="text-black italic">
                 "ประหยัดค่าใช้จ่ายได้มากเมื่อเทียบกับการเรียนพิเศษแบบเดิม ลูกสาวได้ฝึกฝนตามความต้องการและสอบติดโรงเรียนที่หวัง"
               </p>
             </div>
@@ -375,7 +396,7 @@ export default function Home() {
       </section >
 
       {/* Partners & Support */}
-      < section className="py-16 bg-background" >
+      < section className="py-16 bg-white" >
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-center mb-12">พันธมิตรและการสนับสนุน</h2>
 
@@ -386,7 +407,7 @@ export default function Home() {
                 alt="Uniclass"
                 width={160}
                 height={60}
-                className="mx-auto mb-2"
+                className="mx-auto mb-2 border border-[#261FB3]"
               />
               <p className="text-sm text-gray-600 font-bold">Uniclass</p>
             </div>
@@ -397,7 +418,7 @@ export default function Home() {
                 alt="TED Fund"
                 width={160}
                 height={60}
-                className="mx-auto mb-2"
+                className="mx-auto mb-2 border border-[#261FB3]"
               />
               <p className="text-sm text-gray-600 font-bold">TED Fund</p>
             </div>
@@ -408,7 +429,7 @@ export default function Home() {
                 alt="Partner 3"
                 width={160}
                 height={60}
-                className="mx-auto mb-2"
+                className="mx-auto mb-2 border border-[#261FB3]"
               />
               <p className="text-sm text-gray-600 font-bold">Partner 3</p>
             </div>
@@ -417,7 +438,7 @@ export default function Home() {
       </section >
 
       {/* Final CTA */}
-      < section className="py-16 bg-gradient-to-r from-[#0575E6] to-[#021B79] text-white" >
+      < section className="py-16 bg-[#021B79] text-white" >
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl font-bold mb-6">พร้อมเริ่มต้นการเตรียมสอบแบบใหม่กับ Unicoach AI?</h2>
           <p className="text-xl mb-8 max-w-2xl mx-auto">
