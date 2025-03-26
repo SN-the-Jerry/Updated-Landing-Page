@@ -80,7 +80,7 @@ export default function Home() {
               ></span>
             </button>
           </div>
-
+          
           {/* Desktop Navigation Links - Centered */}
           <div className="hidden md:flex justify-center items-center absolute left-1/2 transform -translate-x-1/2">
             <div className="flex space-x-8">
@@ -110,7 +110,7 @@ export default function Home() {
             />
           </div>
         </div>
-
+       
         {/* Mobile Menu - Updated with cleaner look */}
         {isMobileMenuOpen && (
           <div className={`md:hidden ${customAnimations.slideDown}`}>
