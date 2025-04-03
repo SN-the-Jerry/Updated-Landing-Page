@@ -2,7 +2,7 @@
 import { GTMProvider } from 'next-gtm';
 
 function MyApp({ Component, pageProps }) {
-  const gtmId = process.env.NEXT_PUBLIC_GTM_ID || 'GTM-NG3FFZW5'; // Fallback ID
+  const gtmId = process.env.NEXT_PUBLIC_GTM_ID || 'GTM-PG8P7JBS'; // Fallback ID
   
   return (
     <GTMProvider gtmId={gtmId}>

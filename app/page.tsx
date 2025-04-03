@@ -6,6 +6,7 @@ import { BookOpen, BarChart, Users, TrendingUp, DollarSign, Facebook, Mail, Phon
 import { motion } from "framer-motion"
 import { useState } from "react";
 
+
 // Define custom animations for Tailwind CSS
 const customAnimations = {
   fadeIn: "opacity-0 animate-[fadeIn_1s_ease-in-out_forwards]",
@@ -59,6 +60,7 @@ export default function Home() {
 
   return (
     <main className="flex min-h-screen flex-col bg-gray-50">
+
       {/* Navbar - Updated with cleaner design */}
       <nav className="sticky top-0 z-50 bg-gradient-to-r from-blue-50 via-white to-violet-50 border-b border-blue-200 shadow-md">
         <div className="container mx-auto px-6 h-16 relative flex items-center justify-between">
@@ -80,7 +82,7 @@ export default function Home() {
               ></span>
             </button>
           </div>
-          
+
           {/* Desktop Navigation Links - Centered */}
           <div className="hidden md:flex justify-center items-center absolute left-1/2 transform -translate-x-1/2">
             <div className="flex space-x-8">
@@ -90,10 +92,10 @@ export default function Home() {
               <a href="#courses" className="text-blue-700 font-medium hover:text-violet-600 transition-colors">
                 Courses
               </a>
-              <a href="#review" className="text-blue-700 font-medium hover:text-violet-600 transition-colors">
+              <a href="#blogs" className="text-blue-700 font-medium hover:text-violet-600 transition-colors">
                 Blogs
               </a>
-              <a href="#review" className="text-blue-700 font-medium hover:text-violet-600 transition-colors">
+              <a href="#about" className="text-blue-700 font-medium hover:text-violet-600 transition-colors">
                 About Us
               </a>
             </div>
@@ -110,7 +112,7 @@ export default function Home() {
             />
           </div>
         </div>
-       
+
         {/* Mobile Menu - Updated with cleaner look */}
         {isMobileMenuOpen && (
           <div className={`md:hidden ${customAnimations.slideDown}`}>
@@ -131,18 +133,18 @@ export default function Home() {
                   Courses
                 </a>
                 <a
-                  href="#learning-process"
+                  href="#blogs"
                   className="block text-gray-700 py-4 px-4 border-b border-blue-50 hover:bg-blue-50 hover:text-blue-600 transition-colors flex items-center"
                 >
                   <span className="text-blue-400 mr-3">03</span>
-                  Learning Process
+                  Blogs
                 </a>
                 <a
-                  href="#review"
+                  href="#about"
                   className="block text-gray-700 py-4 px-4 hover:bg-blue-50 hover:text-blue-600 transition-colors flex items-center"
                 >
                   <span className="text-blue-400 mr-3">04</span>
-                  Review
+                  About Us
                 </a>
               </div>
             </div>
@@ -207,7 +209,6 @@ export default function Home() {
 
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto mb-16 text-center">
-            <span className={`inline-block py-1 px-3 rounded-full bg-violet-100 text-violet-700 font-medium text-sm mb-4 ${customAnimations.fadeIn}`}>เปรียบเทียบอย่างเห็นภาพ</span>
             <h2 className={`text-4xl md:text-5xl font-bold text-slate-800 ${customAnimations.slideUp}`}>เปรียบเทียบการเตรียมสอบ</h2>
             <p className={`mt-4 text-slate-600 ${customAnimations.fadeIn}`}>ค้นพบความแตกต่างระหว่างวิธีเตรียมสอบแบบเดิมกับเทคโนโลยี AI ที่จะยกระดับการเรียนรู้ของคุณ</p>
           </div>
@@ -337,7 +338,7 @@ export default function Home() {
       </section>
 
       {/* How It Works Section - Ultra Modern Design with Animation */}
-      <section id="how-it-works" className="py-24 bg-white relative overflow-hidden">
+      <section id="how-it-works" className="py-24 bg-gray-20 relative overflow-hidden">
         {/* Animated decorative elements */}
         <div className="absolute w-full h-1/3 bg-gradient-to-b from-cyan-50 to-transparent top-0 left-0"></div>
         <div className={`absolute w-40 h-40 bg-cyan-200 rounded-full opacity-20 top-20 left-10 blur-2xl ${customAnimations.float}`}></div>
@@ -345,7 +346,6 @@ export default function Home() {
 
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto mb-16 text-center">
-            <span className={`inline-block py-1 px-3 rounded-full bg-cyan-100 text-cyan-700 font-medium text-sm mb-4 ${customAnimations.fadeIn}`}>เข้าใจง่ายใน 4 ขั้นตอน</span>
             <h2 className={`text-4xl md:text-5xl font-bold text-slate-800 ${customAnimations.slideUp}`}>วิธีการใช้งาน Unicoach AI</h2>
             <p className={`mt-4 text-slate-600 ${customAnimations.fadeIn}`}>เริ่มต้นใช้งานง่ายๆ เพียงไม่กี่ขั้นตอน</p>
           </div>
@@ -407,12 +407,7 @@ export default function Home() {
                       <p className="text-slate-600 mb-6">{item.desc}</p>
 
                       <div className="flex items-center justify-between">
-                        <div className={`${itemColors[item.color].text} font-medium text-sm flex items-center`}>
-                          <span className="mr-1">เริ่มเลย</span>
-                          <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                          </svg>
-                        </div>
+
 
                         {/* Circular progress indicator that fills on hover */}
                         <div className={`w-8 h-8 rounded-full border-2 ${itemColors[item.color].border} flex items-center justify-center relative`}>
@@ -522,12 +517,12 @@ export default function Home() {
 
       {/* Features & Benefits */}
       <section id="features" className="py-16 bg-gray-50">
-        <div className="container mx-auto px-4 relative z-10">
-          <h2 className="text-3xl font-bold text-center mb-12">
-            <span className="bg-blue-50 border border-blue-100 px-4 py-2 rounded-full">
+        <div className="container mx-auto px-4 py-2 relative ">
+          <h2 className="text-3xl font-bold text-center mb-8">
+            <span className="bg-gray-50">
               คุณสมบัติและประโยชน์ </span></h2>
 
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-2 gap-8 mb-8">
             {[
               {
                 icon: <BarChart className="h-6 w-6 text-blue-600" />,
@@ -641,30 +636,42 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Final CTA */}
-      <section className="py-16 bg-blue-50 border-t border-b border-blue-100">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold mb-6 text-gray-900">พร้อมเริ่มต้นการเตรียมสอบแบบใหม่กับ Unicoach AI?</h2>
-          <p className="text-xl mb-8 max-w-2xl mx-auto text-gray-700">
-            เริ่มต้นใช้งานง่ายๆ เพียงแค่เพิ่มเพื่อนใน LINE และเริ่มการเดินทางสู่ความสำเร็จในการสอบเข้าโรงเรียนในฝัน
-          </p>
+      {/* Enhanced Final CTA Section */}
+      <section className="py-20 bg-gradient-to-b from-blue-50 to-indigo-50 relative overflow-hidden">
+        {/* Decorative elements */}
+        <div className="absolute w-64 h-64 rounded-full bg-blue-100 opacity-40 -top-20 -left-20 blur-3xl animate-pulse"></div>
+        <div className="absolute w-80 h-80 rounded-full bg-indigo-100 opacity-40 -bottom-40 -right-20 blur-3xl animate-pulse"></div>
 
-          <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <a
-              href="https://line.me/R/ti/p/@unicoach"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center bg-white border-2 border-green-600 text-blue-600 font-medium rounded-xl px-4 py-2 hover:bg-blue-50 transition-all duration-300 shadow-md"
-            >
-              <Image src="/line.png" alt="LINE" width={24} height={24} className="mr-2" />
-              <span className="text-lg">Add LINE</span>
-            </a>
-            <a
-              href="#contact"
-              className="inline-flex items-center justify-center bg-blue-600 text-white font-medium rounded-xl px-6 py-2 hover:bg-blue-700 transition-all duration-300 shadow-md"
-            >
-              <span className="text-lg">ติดต่อเรา</span>
-            </a>
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="bg-white p-10 rounded-2xl shadow-lg max-w-3xl mx-auto transform hover:scale-[1.01] transition-all duration-300">
+            {/* Decorative top accent bar */}
+            <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-blue-500 via-blue-600 to-indigo-600 rounded-t-2xl"></div>
+
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-center bg-gradient-to-r from-blue-600 to-indigo-600 text-transparent bg-clip-text">
+              พร้อมเริ่มต้นการเตรียมสอบแบบใหม่กับ Unicoach AI?
+            </h2>
+
+            <p className="text-lg mb-8 max-w-2xl mx-auto text-gray-600 text-center">
+              เริ่มต้นใช้งานง่ายๆ เพียงแค่เพิ่มเพื่อนใน LINE และเริ่มการเดินทางสู่ความสำเร็จในการสอบเข้าโรงเรียนในฝัน
+            </p>
+
+            <div className="flex flex-col sm:flex-row justify-center items-center gap-5">
+              <a
+                href="https://line.me/R/ti/p/@unicoach"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center bg-gradient-to-r from-emerald-600 to-emerald-800 text-white font-medium rounded-lg px-5 py-3 hover:from-green-600 hover:to-green-500 transition-all duration-300 shadow-md"
+              >
+                <img src="/line.png" alt="LINE" width={20} height={20} className="mr-3 transition-transform" />
+                <span>เพิ่มเ LINE</span>
+              </a>
+              <a
+                href="#contact"
+                className="inline-flex items-center justify-center bg-gradient-to-r from-indigo-700 to-blue-900 text-white font-medium rounded-lg px-5 py-3 hover:from-blue-700 hover:to-blue-600 transition-all duration-300 shadow-sm w-full sm:w-36"
+              >
+                <span>ติดต่อเรา</span>
+              </a>
+            </div>
           </div>
         </div>
       </section>
@@ -702,95 +709,123 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Contact Section */}
-      <section id="contact" className="py-16 bg-white">
+      {/* Enhanced Contact Section with adjusted box sizes */}
+      <section id="contact" className="py-20 bg-gradient-to-b from-white to-blue-50 relative">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12">ติดต่อเรา</h2>
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold">
+              <span className="relative z-10">ติดต่อเรา</span>
+            </h2>
+            <p className="text-gray-600 mt-4 max-w-2xl mx-auto">
+              มีคำถามหรือข้อสงสัย? เราพร้อมตอบทุกคำถามและให้คำแนะนำ
+            </p>
+          </div>
 
-          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            <div>
-              <h3 className="text-xl font-semibold mb-4">ข้อมูลติดต่อ</h3>
-              <div className="space-y-4">
-                <div className="flex items-start">
-                  <div className="w-10 h-10 bg-blue-50 rounded-full flex items-center justify-center mr-3 border border-blue-100">
-                    <Mail className="h-5 w-5 text-blue-600" />
+          <div className="max-w-5xl mx-auto">
+            <div className="grid md:grid-cols-2 gap-12" style={{ gridTemplateColumns: '1fr 1.5fr' }}>
+              {/* Contact Info - Shorter box */}
+              <div className="bg-white rounded-2xl shadow-md p-5 relative overflow-hidden border border-blue-100" style={{ maxHeight: '450px', maxWidth: '550px' }}>
+                {/* Accent top border with more attractive gradient */}
+                <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-t-2xl"></div>
+
+                <h3 className="text-xl font-semibold mb-4 text-gray-800 pb-2 border-b border-blue-100 relative">
+                  ข้อมูลติดต่อ
+                  <span className="absolute bottom-0 left-0 w-16 h-0.5 bg-gradient-to-r from-blue-500 to-indigo-600"></span>
+                </h3>
+
+                <div className="space-y-3 relative">
+                  <div className="flex items-center p-3 rounded-lg transition-all duration-300 hover:bg-blue-50 hover:shadow-sm">
+                    <div className="w-10 h-10 bg-gradient-to-br from-blue-100 to-indigo-100 rounded-lg flex items-center justify-center mr-4 shadow-sm">
+                      <Mail className="h-4 w-4 text-blue-600" />
+                    </div>
+                    <div>
+                      <p className="font-medium text-gray-700 text-sm mb-0.5">อีเมล</p>
+                      <p className="text-blue-600 font-medium hover:text-indigo-600 transition-colors">
+                        <a href="mailto:unicoachai@gmail.com">unicoachai@gmail.com</a>
+                      </p>
+                    </div>
                   </div>
-                  <div>
-                    <p className="font-medium">อีเมล</p>
-                    <p className="text-gray-700">support@unicoach.ai</p>
+
+                  <div className="flex items-center p-3 rounded-lg transition-all duration-300 hover:bg-blue-50 hover:shadow-sm">
+                    <div className="w-10 h-10 bg-gradient-to-br from-blue-100 to-indigo-100 rounded-lg flex items-center justify-center mr-4 shadow-sm">
+                      <Phone className="h-4 w-4 text-blue-600" />
+                    </div>
+                    <div>
+                      <p className="font-medium text-gray-700 text-sm mb-0.5">โทรศัพท์</p>
+                      <p className="text-blue-600 font-medium hover:text-indigo-600 transition-colors">
+                        <a href="tel:0612345678">06-123-4567</a>
+                      </p>
+                    </div>
                   </div>
-                </div>
-                <div className="flex items-start">
-                  <div className="w-10 h-10 bg-blue-50 rounded-full flex items-center justify-center mr-3 border border-blue-100">
-                    <Phone className="h-5 w-5 text-blue-600" />
-                  </div>
-                  <div>
-                    <p className="font-medium">โทรศัพท์</p>
-                    <p className="text-gray-700">06-123-4567</p>
-                  </div>
-                </div>
-                <div className="flex items-start">
-                  <div className="w-10 h-10 bg-blue-50 rounded-full flex items-center justify-center mr-3 border border-blue-100">
-                    <Facebook className="h-5 w-5 text-blue-600" />
-                  </div>
-                  <div>
-                    <p className="font-medium">เฟซบุ๊ก</p>
-                    <p className="text-gray-700">facebook.com/unicoach.ai</p>
+
+                  <div className="flex items-center p-3 rounded-lg transition-all duration-300 hover:bg-blue-50 hover:shadow-sm">
+                    <div className="w-10 h-10 bg-gradient-to-br from-blue-100 to-indigo-100 rounded-lg flex items-center justify-center mr-4 shadow-sm">
+                      <Facebook className="h-4 w-4 text-blue-600" />
+                    </div>
+                    <div>
+                      <p className="font-medium text-gray-700 text-sm mb-0.5">เฟซบุ๊ก</p>
+                      <p className="text-blue-600 font-medium hover:text-indigo-600 transition-colors">
+                        <a href="https://facebook.com/unicoach.ai" target="_blank" rel="noopener noreferrer">
+                          facebook.com/unicoach.ai
+                        </a>
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
 
-              <div className="mt-8">
-                <h3 className="text-xl font-semibold mb-4">ติดตามเรา</h3>
-                <div className="flex space-x-4">
-                  <a href="#" className="w-10 h-10 bg-blue-50 rounded-full flex items-center justify-center border border-blue-100 hover:bg-blue-100 transition-colors">
-                    <Image src="/facebook.png" alt="Facebook" width={37} height={37} />
-                  </a>
-                  <a href="#" className="w-10 h-10 bg-blue-50 rounded-full flex items-center justify-center border border-blue-100 hover:bg-blue-100 transition-colors">
-                    <Image src="/tiktok.png" alt="Tiktok" width={37} height={37} />
-                  </a>
+              {/* Contact Form - Taller box */}
+              <div className="bg-white rounded-2xl shadow-lg p-8 relative" style={{ minHeight: '550px' }}>
+                {/* Accent top border */}
+                <div className="absolute top-0 left-0 right-0 h-2 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-t-2xl"></div>
 
+                <div className="absolute -top-5 right-8 bg-blue-600 text-white text-sm font-bold py-1.5 px-4 rounded-full shadow-md">
+                  แบบฟอร์มติดต่อ
                 </div>
+
+                <h3 className="text-xl font-semibold mb-4 text-gray-800 pb-2 border-b border-blue-100 relative">
+                  ส่งข้อความถึงเรา
+                </h3>
+
+                <form className="space-y-5">
+                  <div>
+                    <label className="block text-sm font-medium mb-2 text-gray-700" htmlFor="name">ชื่อ</label>
+                    <input
+                      type="text"
+                      id="name"
+                      className="w-full px-4 py-3 bg-blue-50/50 border border-blue-100 rounded-xl focus:ring-2 focus:ring-blue-200 focus:border-blue-400 focus:outline-none transition-all"
+                      placeholder="กรอกชื่อของคุณ"
+                    />
+                  </div>
+
+                  <div>
+                    <label className="block text-sm font-medium mb-2 text-gray-700" htmlFor="email">อีเมล</label>
+                    <input
+                      type="email"
+                      id="email"
+                      className="w-full px-4 py-3 bg-blue-50/50 border border-blue-100 rounded-xl focus:ring-2 focus:ring-blue-200 focus:border-blue-400 focus:outline-none transition-all"
+                      placeholder="example@email.com"
+                    />
+                  </div>
+
+                  <div>
+                    <label className="block text-sm font-medium mb-2 text-gray-700" htmlFor="message">ข้อความ</label>
+                    <textarea
+                      id="message"
+                      rows={8}
+                      className="w-full px-4 py-3 bg-blue-50/50 border border-blue-100 rounded-xl focus:ring-2 focus:ring-blue-200 focus:border-blue-400 focus:outline-none transition-all"
+                      placeholder="พิมพ์ข้อความของคุณที่นี่..."
+                    ></textarea>
+                  </div>
+
+                  <button
+                    type="submit"
+                    className="w-full py-3.5 px-6 bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-medium text-lg rounded-xl hover:from-blue-700 hover:to-indigo-700 transition-all duration-300 shadow-lg hover:shadow-blue-200/50 transform hover:-translate-y-0.5"
+                  >
+                    ส่งข้อความ
+                  </button>
+                </form>
               </div>
-            </div>
-
-            <div>
-              <h3 className="text-xl font-semibold mb-4">ส่งข้อความถึงเรา</h3>
-              <form className="space-y-4">
-                <div>
-                  <label className="block text-sm font-medium mb-1" htmlFor="name">ชื่อ</label>
-                  <input
-                    type="text"
-                    id="name"
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500"
-                    placeholder="กรอกชื่อของคุณ"
-                  />
-                </div>
-                <div>
-                  <label className="block text-sm font-medium mb-1" htmlFor="email">อีเมล</label>
-                  <input
-                    type="email"
-                    id="email"
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500"
-                    placeholder="example@email.com"
-                  />
-                </div>
-                <div>
-                  <label className="block text-sm font-medium mb-1" htmlFor="message">ข้อความ</label>
-                  <textarea
-                    id="message"
-                    rows={4}
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500"
-                    placeholder="พิมพ์ข้อความของคุณที่นี่..."
-                  ></textarea>
-                </div>
-                <button
-                  type="submit"
-                  className="w-full py-3 px-4 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition-all duration-300"
-                >
-                  ส่งข้อความ
-                </button>
-              </form>
             </div>
           </div>
         </div>
@@ -799,14 +834,14 @@ export default function Home() {
       {/* Footer */}
       <footer className="bg-gray-900 text-white py-12">
         <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-4 gap-8">
+          <div className="grid md:grid-cols-2 gap-8">
             <div>
-              <div className="bg-white rounded-full flex items-center justify-center w-[90px] h-[40px] shadow-sm mb-4">
+              <div className="mb-4">
                 <Image
-                  src="/logo.svg"
+                  src="/unicoach.logo.png"
                   alt="Unicoach AI Logo"
-                  width={140}
-                  height={50}
+                  width={100}
+                  height={30}
                   className="transition-transform duration-300 hover:scale-105"
                 />
               </div>
@@ -823,29 +858,13 @@ export default function Home() {
               </div>
             </div>
 
+            {/* Simplified footer - just one column with contact info */}
             <div>
-              <h3 className="text-lg font-semibold mb-4">บริการของเรา</h3>
+              <h3 className="text-lg font-semibold mb-4">ติดต่อเรา</h3>
               <ul className="space-y-2">
-                <li><a href="#" className="text-gray-400 hover:text-white transition-colors">เตรียมสอบ ม.1</a></li>
-                <li><a href="#" className="text-gray-400 hover:text-white transition-colors">เตรียมสอบ ม.4</a></li>
-                <li><a href="#" className="text-gray-400 hover:text-white transition-colors">คอร์สพิเศษ</a></li>
-                <li><a href="#" className="text-gray-400 hover:text-white transition-colors">บริการสำหรับโรงเรียน</a></li>
-              </ul>
-            </div>
-
-            <div>
-              <h3 className="text-lg font-semibold mb-4">เกี่ยวกับเรา</h3>
-              <ul className="space-y-2">
-                <li><a href="#" className="text-gray-400 hover:text-white transition-colors">เกี่ยวกับ Unicoach</a></li>
-                <li><a href="#" className="text-gray-400 hover:text-white transition-colors">ทีมงานของเรา</a></li>
-              </ul>
-            </div>
-
-            <div>
-              <h3 className="text-lg font-semibold mb-4">ช่วยเหลือ</h3>
-              <ul className="space-y-2">
-                <li><a href="#" className="text-gray-400 hover:text-white transition-colors">คำถามที่พบบ่อย</a></li>
-                <li><a href="#" className="text-gray-400 hover:text-white transition-colors">ติดต่อเรา</a></li>
+                <li className="flex items-center"><Mail className="h-4 w-4 mr-2 text-blue-400" /> unicoachai@gmail.com</li>
+                <li className="flex items-center"><Phone className="h-4 w-4 mr-2 text-blue-400" /> 06-123-4567</li>
+                <li className="flex items-center"><Facebook className="h-4 w-4 mr-2 text-blue-400" /> facebook.com/unicoach.ai</li>
                 <li><a href="#" className="text-gray-400 hover:text-white transition-colors">นโยบายความเป็นส่วนตัว</a></li>
                 <li><a href="#" className="text-gray-400 hover:text-white transition-colors">เงื่อนไขการใช้งาน</a></li>
               </ul>
