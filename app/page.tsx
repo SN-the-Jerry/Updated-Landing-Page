@@ -4,7 +4,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Card, CardContent } from "@/components/ui/card"
 import { BookOpen, BarChart, Users, TrendingUp, DollarSign, Facebook, Mail, Phone } from "lucide-react"
 import { motion } from "framer-motion"
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 
 // Define custom animations for Tailwind CSS
@@ -21,6 +21,15 @@ const customAnimations = {
 
 export default function Home() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  useEffect(() => {
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      'event': 'testEvent',
+      'testVariable': 'test value'
+    });
+    console.log('Test event pushed to dataLayer');
+  }, []);
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
