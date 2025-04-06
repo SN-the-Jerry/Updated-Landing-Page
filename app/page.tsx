@@ -628,7 +628,7 @@ export default function Home() {
             {[
               { img: "/uniclass.png", name: "Uniclass" },
               { img: "/tedfund.png", name: "TED Fund" },
-              { img: "/edu_fund.svg", name: "Partner 3" },
+           
             ].map((partner, index) => (
               <div key={index} className="text-center bg-white p-4 rounded-lg border border-blue-100 shadow-sm hover:shadow-md transition-all duration-300 hover:border-blue-300">
                 <Image
@@ -750,7 +750,7 @@ export default function Home() {
                     <div>
                       <p className="font-medium text-gray-700 text-sm mb-0.5">อีเมล</p>
                       <p className="text-blue-600 font-medium hover:text-indigo-600 transition-colors">
-                        <a href="mailto:unicoachai@gmail.com">unicoachai@gmail.com</a>
+                        <a href="mailto:unicoachai@gmail.com">admin@uniclass.io</a>
                       </p>
                     </div>
                   </div>
@@ -762,7 +762,7 @@ export default function Home() {
                     <div>
                       <p className="font-medium text-gray-700 text-sm mb-0.5">โทรศัพท์</p>
                       <p className="text-blue-600 font-medium hover:text-indigo-600 transition-colors">
-                        <a href="tel:0612345678">06-123-4567</a>
+                        <a href="tel:0917824562">09-178-24562</a>
                       </p>
                     </div>
                   </div>
@@ -871,8 +871,8 @@ export default function Home() {
             <div>
               <h3 className="text-lg font-semibold mb-4">ติดต่อเรา</h3>
               <ul className="space-y-2">
-                <li className="flex items-center"><Mail className="h-4 w-4 mr-2 text-blue-400" /> unicoachai@gmail.com</li>
-                <li className="flex items-center"><Phone className="h-4 w-4 mr-2 text-blue-400" /> 06-123-4567</li>
+                <li className="flex items-center"><Mail className="h-4 w-4 mr-2 text-blue-400" /> admin@uniclass.io</li>
+                <li className="flex items-center"><Phone className="h-4 w-4 mr-2 text-blue-400" /> 09-178-24562</li>
                 <li className="flex items-center"><Facebook className="h-4 w-4 mr-2 text-blue-400" /> facebook.com/unicoach.ai</li>
                 <li><a href="#" className="text-gray-400 hover:text-white transition-colors">นโยบายความเป็นส่วนตัว</a></li>
                 <li><a href="#" className="text-gray-400 hover:text-white transition-colors">เงื่อนไขการใช้งาน</a></li>
