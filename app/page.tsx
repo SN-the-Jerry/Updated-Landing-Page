@@ -173,9 +173,9 @@ export default function Home() {
       </nav>
 
 
-      {/* Hero Section - Updated with cleaner design */}
-      <section id="hero_section" className="bg-gradient-to-br from-blue-50 to-white py-16 md:py-20">
-        <div className="container mx-auto px-6">
+      {/* Hero Section - With balanced typography and improved image display */}
+      <section id="hero_section" className="bg-gradient-to-br from-blue-50 to-white py-12 md:py-16">
+        <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -183,15 +183,14 @@ export default function Home() {
             className="grid md:grid-cols-2 gap-8 items-center"
           >
             <div>
-              <h1 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4 leading-tight">
-                เตรียมสอบเข้าโรงเรียนด้วย AI ที่เข้าใจคุณ
+              <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6 leading-tight">
+                สอบติดโรงเรียนในฝัน เริ่มต้นได้ที่นี่
               </h1>
-              <p className="text-lg text-gray-700 mb-8 leading-relaxed">
-                Unicoach AI ช่วยให้นักเรียนเตรียมสอบเข้าโรงเรียนได้อย่างมีประสิทธิภาพ ด้วยการวิเคราะห์จุดแข็งจุดอ่อนและสร้างแบบฝึกหัดเฉพาะบุคคล
+              <p className="text-base text-gray-700 mb-8 leading-relaxed">
+                Unicoach AI แพลตฟอร์มเตรียมสอบด้วย AI ที่วิเคราะห์จุดแข็ง–จุดอ่อน พร้อมสร้างแบบฝึกหัดเฉพาะตัว เพื่อพัฒนาศักยภาพและพิชิตสนามสอบอย่างมั่นใจ
               </p>
 
               <div className="flex flex-col sm:flex-row gap-5">
-                {/* Button - Updated with cleaner design */}
                 <motion.div
                   whileHover={{ scale: 1.03 }}
                   whileTap={{ scale: 0.98 }}
@@ -200,20 +199,20 @@ export default function Home() {
                   <div className="absolute inset-0 bg-blue-600 rounded-xl blur opacity-20 transform rotate-1"></div>
                   <button className="relative w-full py-2 px-4 bg-white border-2 border-blue-600 text-blue-600 font-medium rounded-xl flex items-center justify-center space-x-3 shadow-md hover:bg-blue-50 transition-all duration-300">
                     <BookOpen size={16} />
-                    <span className="text-lg">Try Now for Free!</span>
+                    <span className="text-base">เริ่มฝึกทำข้อสอบ</span>
                   </button>
                 </motion.div>
               </div>
             </div>
 
-            {/* Image display */}
-            <div className="relative h-[300px] md:h-[400px] lg:h-[450px]">
+            {/* Image display - Larger display with proper positioning */}
+            <div className="relative h-[380px] md:h-[400px] lg:h-[410px] w-full">
               <div className="absolute inset-0 rounded-2xl bg-blue-100/30 border border-blue-200"></div>
               <Image
-                src="/4.webp"
+                src="/4.png"
                 alt="นักเรียนกำลังใช้ Unicoach AI"
                 fill
-                className="object-contain"
+                className="object-contain p-2"
                 priority
               />
             </div>
