@@ -5,6 +5,7 @@ import { Card, CardContent } from "@/components/ui/card"
 import { BookOpen, BarChart, Users, TrendingUp, DollarSign, Facebook, Mail, Phone } from "lucide-react"
 import { motion } from "framer-motion"
 import { useState, useEffect } from "react";
+import SEO from "@/components/SEO" // Import the SEO component
 
 
 // Define custom animations for Tailwind CSS
@@ -70,6 +71,16 @@ export default function Home() {
   return (
     <main className="flex min-h-screen flex-col bg-gray-50">
 
+      {/* SEO Component */}
+      <SEO
+        title="Unicoach AI | แพลตฟอร์มเตรียมสอบเข้าด้วย AI สำหรับนักเรียน ม.1 และ ม.4"
+        description="Unicoach AI ช่วยให้นักเรียนเตรียมสอบเข้าโรงเรียนชั้นนำได้อย่างมีประสิทธิภาพ ด้วยการวิเคราะห์จุดแข็งจุดอ่อนและสร้างแบบฝึกหัดเฉพาะบุคคล"
+        canonical="https://unicoach.ai"
+        ogImage="https://unicoach.ai/og-image.jpg"
+        ogType="website"
+        twitterHandle="@unicoach"
+      />
+
       {/* Navbar - Updated with cleaner design */}
       <nav className="sticky top-0 z-50 bg-gradient-to-r from-blue-50 via-white to-violet-50 border-b border-blue-200 shadow-md">
         <div className="container mx-auto px-6 h-16 relative flex items-center justify-between">
@@ -95,17 +106,17 @@ export default function Home() {
           {/* Desktop Navigation Links - Centered */}
           <div className="hidden md:flex justify-center items-center absolute left-1/2 transform -translate-x-1/2">
             <div className="flex space-x-8">
-              <a href="#explore" className="text-blue-700 font-medium hover:text-violet-600 transition-colors">
-                Explore
-              </a>
-              <a href="#courses" className="text-blue-700 font-medium hover:text-violet-600 transition-colors">
-                Courses
-              </a>
-              <a href="#blogs" className="text-blue-700 font-medium hover:text-violet-600 transition-colors">
-                Blogs
+              <a href="#hero_section" className="text-blue-700 font-medium hover:text-violet-600 transition-colors">
+                หน้าแรก
               </a>
               <a href="#about" className="text-blue-700 font-medium hover:text-violet-600 transition-colors">
-                About Us
+                เกี่ยวกับเรา
+              </a>
+              <a href="#faq" className="text-blue-700 font-medium hover:text-violet-600 transition-colors">
+                คำถามที่พบบ่อย
+              </a>
+              <a href="#cta" className="text-blue-700 font-medium hover:text-violet-600 transition-colors">
+                ช่องทางการติดต่อ
               </a>
             </div>
           </div>
@@ -128,32 +139,32 @@ export default function Home() {
             <div className="bg-white border-t border-blue-100">
               <div className="container mx-auto px-4 py-2">
                 <a
-                  href="#explore"
+                  href="#hero_section"
                   className="block text-gray-700 py-4 px-4 border-b border-blue-50 hover:bg-blue-50 hover:text-blue-600 transition-colors flex items-center"
                 >
                   <span className="text-blue-400 mr-3">01</span>
-                  Explore
-                </a>
-                <a
-                  href="#courses"
-                  className="block text-gray-700 py-4 px-4 border-b border-blue-50 hover:bg-blue-50 hover:text-blue-600 transition-colors flex items-center"
-                >
-                  <span className="text-blue-400 mr-3">02</span>
-                  Courses
-                </a>
-                <a
-                  href="#blogs"
-                  className="block text-gray-700 py-4 px-4 border-b border-blue-50 hover:bg-blue-50 hover:text-blue-600 transition-colors flex items-center"
-                >
-                  <span className="text-blue-400 mr-3">03</span>
-                  Blogs
+                  หน้าแรก
                 </a>
                 <a
                   href="#about"
+                  className="block text-gray-700 py-4 px-4 border-b border-blue-50 hover:bg-blue-50 hover:text-blue-600 transition-colors flex items-center"
+                >
+                  <span className="text-blue-400 mr-3">03</span>
+                  เกี่ยวกับเรา
+                </a>
+                <a
+                  href="#faq"
+                  className="block text-gray-700 py-4 px-4 border-b border-blue-50 hover:bg-blue-50 hover:text-blue-600 transition-colors flex items-center"
+                >
+                  <span className="text-blue-400 mr-3">02</span>
+                  คำถามที่พบบ่อย
+                </a>
+                <a
+                  href="#cta"
                   className="block text-gray-700 py-4 px-4 hover:bg-blue-50 hover:text-blue-600 transition-colors flex items-center"
                 >
                   <span className="text-blue-400 mr-3">04</span>
-                  About Us
+                  ช่องทางการติดต่อ
                 </a>
               </div>
             </div>
@@ -163,7 +174,7 @@ export default function Home() {
 
 
       {/* Hero Section - Updated with cleaner design */}
-      <section className="bg-gradient-to-br from-blue-50 to-white py-16 md:py-20">
+      <section id="hero_section" className="bg-gradient-to-br from-blue-50 to-white py-16 md:py-20">
         <div className="container mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -211,7 +222,7 @@ export default function Home() {
       </section>
 
       {/* Problem-Solution Section - Ultra Modern Design with Animation */}
-      <section className="py-24 bg-slate-50 relative overflow-hidden">
+      <section id="about" className="py-30 bg-slate-50 relative overflow-hidden">
         {/* Decorative elements */}
         <div className="absolute w-64 h-64 rounded-full bg-fuchsia-200 opacity-30 -top-20 -left-20 blur-3xl animate-pulse"></div>
         <div className="absolute w-96 h-96 rounded-full bg-blue-200 opacity-30 -bottom-40 -right-20 blur-3xl animate-pulse"></div>
@@ -628,7 +639,7 @@ export default function Home() {
             {[
               { img: "/uniclass.png", name: "Uniclass" },
               { img: "/tedfund.png", name: "TED Fund" },
-           
+
             ].map((partner, index) => (
               <div key={index} className="text-center bg-white p-4 rounded-lg border border-blue-100 shadow-sm hover:shadow-md transition-all duration-300 hover:border-blue-300">
                 <Image
@@ -645,48 +656,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Enhanced Final CTA Section */}
-      <section className="py-20 bg-gradient-to-b from-blue-50 to-indigo-50 relative overflow-hidden">
-        {/* Decorative elements */}
-        <div className="absolute w-64 h-64 rounded-full bg-blue-100 opacity-40 -top-20 -left-20 blur-3xl animate-pulse"></div>
-        <div className="absolute w-80 h-80 rounded-full bg-indigo-100 opacity-40 -bottom-40 -right-20 blur-3xl animate-pulse"></div>
-
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="bg-white p-10 rounded-2xl shadow-lg max-w-3xl mx-auto transform hover:scale-[1.01] transition-all duration-300">
-            {/* Decorative top accent bar */}
-            <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-blue-500 via-blue-600 to-indigo-600 rounded-t-2xl"></div>
-
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-center bg-gradient-to-r from-blue-600 to-indigo-600 text-transparent bg-clip-text">
-              พร้อมเริ่มต้นการเตรียมสอบแบบใหม่กับ Unicoach AI?
-            </h2>
-
-            <p className="text-lg mb-8 max-w-2xl mx-auto text-gray-600 text-center">
-              เริ่มต้นใช้งานง่ายๆ เพียงแค่เพิ่มเพื่อนใน LINE และเริ่มการเดินทางสู่ความสำเร็จในการสอบเข้าโรงเรียนในฝัน
-            </p>
-
-            <div className="flex flex-col sm:flex-row justify-center items-center gap-5">
-              <a
-                href="https://line.me/R/ti/p/@unicoach"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center bg-gradient-to-r from-emerald-600 to-emerald-800 text-white font-medium rounded-lg px-5 py-3 hover:from-green-600 hover:to-green-500 transition-all duration-300 shadow-md"
-              >
-                <img src="/line.png" alt="LINE" width={20} height={20} className="mr-3 transition-transform" />
-                <span>เพิ่มเ LINE</span>
-              </a>
-              <a
-                href="#contact"
-                className="inline-flex items-center justify-center bg-gradient-to-r from-indigo-700 to-blue-900 text-white font-medium rounded-lg px-5 py-3 hover:from-blue-700 hover:to-blue-600 transition-all duration-300 shadow-sm w-full sm:w-36"
-              >
-                <span>ติดต่อเรา</span>
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* FAQ Section */}
-      <section id="faq" className="py-16 bg-gray-50">
+      <section id="faq" className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-center mb-12">คำถามที่พบบ่อย</h2>
 
@@ -718,123 +689,44 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Enhanced Contact Section with adjusted box sizes */}
-      <section id="contact" className="py-20 bg-gradient-to-b from-white to-blue-50 relative">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold">
-              <span className="relative z-10">ติดต่อเรา</span>
+      {/* Enhanced Final CTA Section */}
+      <section id="cta" className="py-20 bg-gradient-to-b from-blue-50 to-indigo-50 relative overflow-hidden">
+        {/* Decorative elements */}
+        <div className="absolute w-64 h-64 rounded-full bg-blue-100 opacity-40 -top-20 -left-20 blur-3xl animate-pulse"></div>
+        <div className="absolute w-80 h-80 rounded-full bg-indigo-100 opacity-40 -bottom-40 -right-20 blur-3xl animate-pulse"></div>
+
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="bg-white p-10 rounded-2xl shadow-lg max-w-3xl mx-auto transform hover:scale-[1.01] transition-all duration-300">
+            {/* Decorative top accent bar */}
+            <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-blue-500 via-blue-600 to-indigo-600 rounded-t-2xl"></div>
+
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-center bg-gradient-to-r from-blue-600 to-indigo-600 text-transparent bg-clip-text">
+              พร้อมเริ่มต้นการเตรียมสอบแบบใหม่กับ Unicoach AI?
             </h2>
-            <p className="text-gray-600 mt-4 max-w-2xl mx-auto">
-              มีคำถามหรือข้อสงสัย? เราพร้อมตอบทุกคำถามและให้คำแนะนำ
+
+            <p className="text-lg mb-8 max-w-2xl mx-auto text-gray-600 text-center">
+              เริ่มต้นใช้งานง่ายๆ เพียงแค่เพิ่มเพื่อนใน LINE และเริ่มการเดินทางสู่ความสำเร็จในการสอบเข้าโรงเรียนในฝัน
             </p>
-          </div>
 
-          <div className="max-w-5xl mx-auto">
-            <div className="grid md:grid-cols-2 gap-12" style={{ gridTemplateColumns: '1fr 1.5fr' }}>
-              {/* Contact Info - Shorter box */}
-              <div className="bg-white rounded-2xl shadow-md p-5 relative overflow-hidden border border-blue-100" style={{ maxHeight: '450px', maxWidth: '550px' }}>
-                {/* Accent top border with more attractive gradient */}
-                <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-t-2xl"></div>
-
-                <h3 className="text-xl font-semibold mb-4 text-gray-800 pb-2 border-b border-blue-100 relative">
-                  ข้อมูลติดต่อ
-                  <span className="absolute bottom-0 left-0 w-16 h-0.5 bg-gradient-to-r from-blue-500 to-indigo-600"></span>
-                </h3>
-
-                <div className="space-y-3 relative">
-                  <div className="flex items-center p-3 rounded-lg transition-all duration-300 hover:bg-blue-50 hover:shadow-sm">
-                    <div className="w-10 h-10 bg-gradient-to-br from-blue-100 to-indigo-100 rounded-lg flex items-center justify-center mr-4 shadow-sm">
-                      <Mail className="h-4 w-4 text-blue-600" />
-                    </div>
-                    <div>
-                      <p className="font-medium text-gray-700 text-sm mb-0.5">อีเมล</p>
-                      <p className="text-blue-600 font-medium hover:text-indigo-600 transition-colors">
-                        <a href="mailto:unicoachai@gmail.com">admin@uniclass.io</a>
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="flex items-center p-3 rounded-lg transition-all duration-300 hover:bg-blue-50 hover:shadow-sm">
-                    <div className="w-10 h-10 bg-gradient-to-br from-blue-100 to-indigo-100 rounded-lg flex items-center justify-center mr-4 shadow-sm">
-                      <Phone className="h-4 w-4 text-blue-600" />
-                    </div>
-                    <div>
-                      <p className="font-medium text-gray-700 text-sm mb-0.5">โทรศัพท์</p>
-                      <p className="text-blue-600 font-medium hover:text-indigo-600 transition-colors">
-                        <a href="tel:0917824562">09-178-24562</a>
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="flex items-center p-3 rounded-lg transition-all duration-300 hover:bg-blue-50 hover:shadow-sm">
-                    <div className="w-10 h-10 bg-gradient-to-br from-blue-100 to-indigo-100 rounded-lg flex items-center justify-center mr-4 shadow-sm">
-                      <Facebook className="h-4 w-4 text-blue-600" />
-                    </div>
-                    <div>
-                      <p className="font-medium text-gray-700 text-sm mb-0.5">เฟซบุ๊ก</p>
-                      <p className="text-blue-600 font-medium hover:text-indigo-600 transition-colors">
-                        <a href="https://facebook.com/unicoach.ai" target="_blank" rel="noopener noreferrer">
-                          facebook.com/unicoach.ai
-                        </a>
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Contact Form - Taller box */}
-              <div className="bg-white rounded-2xl shadow-lg p-8 relative" style={{ minHeight: '550px' }}>
-                {/* Accent top border */}
-                <div className="absolute top-0 left-0 right-0 h-2 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-t-2xl"></div>
-
-                <div className="absolute -top-5 right-8 bg-blue-600 text-white text-sm font-bold py-1.5 px-4 rounded-full shadow-md">
-                  แบบฟอร์มติดต่อ
-                </div>
-
-                <h3 className="text-xl font-semibold mb-4 text-gray-800 pb-2 border-b border-blue-100 relative">
-                  ส่งข้อความถึงเรา
-                </h3>
-
-                <form className="space-y-5">
-                  <div>
-                    <label className="block text-sm font-medium mb-2 text-gray-700" htmlFor="name">ชื่อ</label>
-                    <input
-                      type="text"
-                      id="name"
-                      className="w-full px-4 py-3 bg-blue-50/50 border border-blue-100 rounded-xl focus:ring-2 focus:ring-blue-200 focus:border-blue-400 focus:outline-none transition-all"
-                      placeholder="กรอกชื่อของคุณ"
-                    />
-                  </div>
-
-                  <div>
-                    <label className="block text-sm font-medium mb-2 text-gray-700" htmlFor="email">อีเมล</label>
-                    <input
-                      type="email"
-                      id="email"
-                      className="w-full px-4 py-3 bg-blue-50/50 border border-blue-100 rounded-xl focus:ring-2 focus:ring-blue-200 focus:border-blue-400 focus:outline-none transition-all"
-                      placeholder="example@email.com"
-                    />
-                  </div>
-
-                  <div>
-                    <label className="block text-sm font-medium mb-2 text-gray-700" htmlFor="message">ข้อความ</label>
-                    <textarea
-                      id="message"
-                      rows={8}
-                      className="w-full px-4 py-3 bg-blue-50/50 border border-blue-100 rounded-xl focus:ring-2 focus:ring-blue-200 focus:border-blue-400 focus:outline-none transition-all"
-                      placeholder="พิมพ์ข้อความของคุณที่นี่..."
-                    ></textarea>
-                  </div>
-
-                  <button
-                    type="submit"
-                    className="w-full py-3.5 px-6 bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-medium text-lg rounded-xl hover:from-blue-700 hover:to-indigo-700 transition-all duration-300 shadow-lg hover:shadow-blue-200/50 transform hover:-translate-y-0.5"
-                  >
-                    ส่งข้อความ
-                  </button>
-                </form>
-              </div>
+            <div className="flex flex-col sm:flex-row justify-center items-center gap-5">
+              <a
+                href="https://line.me/R/ti/p/@unicoach"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center bg-gradient-to-r from-emerald-600 to-emerald-800 text-white font-medium rounded-lg px-4 py-2 hover:from-green-600 hover:to-green-500 transition-all duration-300 shadow-md"
+              >
+                <img src="/line.png" alt="LINE" width={30} height={30} className="mr-3 transition-transform" />
+                <span>เพิ่มเพื่อน</span>
+              </a>
+              <a
+                href="https://m.me/unicoach"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center bg-gradient-to-r from-blue-500 to-blue-700 text-white font-medium rounded-lg px-4 py-2 hover:from-blue-600 hover:to-blue-500 transition-all duration-300 shadow-md"
+              >
+                <img src="/messenger.svg" alt="Messenger" width={30} height={30} className="mr-3 transition-transform" />
+                <span>ข้อความ</span>
+              </a>
             </div>
           </div>
         </div>
