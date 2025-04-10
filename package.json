@@ -10,10 +10,7 @@
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.1",
-<<<<<<< HEAD
     "@intercom/messenger-js-sdk": "^0.0.14",
-=======
->>>>>>> 3110be9001eb33d02df1f88ef0dda4c5401410b4
     "@radix-ui/react-accordion": "^1.2.2",
     "@radix-ui/react-alert-dialog": "^1.1.4",
     "@radix-ui/react-aspect-ratio": "^1.1.1",
@@ -41,15 +38,11 @@
     "@radix-ui/react-toggle": "^1.1.1",
     "@radix-ui/react-toggle-group": "^1.1.1",
     "@radix-ui/react-tooltip": "^1.1.6",
-<<<<<<< HEAD
     "@vercel/analytics": "^1.5.0",
-=======
->>>>>>> 3110be9001eb33d02df1f88ef0dda4c5401410b4
     "autoprefixer": "^10.4.20",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "cmdk": "1.0.4",
-<<<<<<< HEAD
     "date-fns": "^2.29.3",
     "embla-carousel-react": "8.5.1",
     "framer-motion": "^12.5.0",
@@ -61,25 +54,11 @@
     "react": "^19.1.0",
     "react-day-picker": "^8.10.1",
     "react-dom": "^19.1.0",
-=======
-    "date-fns": "4.1.0",
-    "embla-carousel-react": "8.5.1",
-    "input-otp": "1.4.1",
-    "lucide-react": "^0.454.0",
-    "next": "15.1.0",
-    "next-themes": "^0.4.4",
-    "react": "^19",
-    "react-day-picker": "8.10.1",
-    "react-dom": "^19",
->>>>>>> 3110be9001eb33d02df1f88ef0dda4c5401410b4
     "react-hook-form": "^7.54.1",
     "react-resizable-panels": "^2.1.7",
     "recharts": "2.15.0",
     "sonner": "^1.7.1",
-<<<<<<< HEAD
     "swiper": "^11.2.5",
-=======
->>>>>>> 3110be9001eb33d02df1f88ef0dda4c5401410b4
     "tailwind-merge": "^2.5.5",
     "tailwindcss-animate": "^1.0.7",
     "vaul": "^0.9.6",
@@ -93,8 +72,4 @@
     "tailwindcss": "^3.4.17",
     "typescript": "^5"
   }
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 3110be9001eb33d02df1f88ef0dda4c5401410b4
