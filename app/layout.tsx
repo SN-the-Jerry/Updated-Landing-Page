@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import type { ReactNode } from "react"
 import { Metadata, Viewport } from "next"
 import GoogleTagManager from '@/components/GoogleTagManager'
@@ -58,12 +57,11 @@ export const metadata: Metadata = {
     images: ['https://unicoach.ai/og-image.jpg'],
   },
   icons: {
-    icon: '/favicon.ico',
-    apple: '/apple-touch-icon.png',
-    shortcut: '/favicon-16x16.png',
+    icon: '/favicon_io/favicon.ico',
+    apple: '/favicon_io/apple-touch-icon.png',
+    shortcut: '/favicon_io/favicon-16x16.png',
   },
-  manifest: 'https://unicoach.ai/site.webmanifest',
-  // Remove viewport from here
+  manifest: '/favicon_io/site.webmanifest',
   verification: {
     google: 'google-site-verification-code', // Replace with your actual verification code
     yandex: 'yandex-verification-code', // Replace with your actual verification code if you use Yandex
@@ -72,31 +70,14 @@ export const metadata: Metadata = {
     'theme-color': '#FF6B00', // Primary color from your CSS
   },
 };
-=======
-import type React from "react"
-import type { Metadata } from "next"
-import "./globals.css"
-
-export const metadata: Metadata = {
-  title: "Unicoach AI - แพลตฟอร์มเตรียมสอบเข้าโรงเรียนด้วย AI",
-  description:
-    "Unicoach AI ช่วยให้นักเรียนเตรียมสอบเข้าโรงเรียนได้อย่างมีประสิทธิภาพ ด้วยการวิเคราะห์จุดแข็งจุดอ่อนและสร้างแบบฝึกหัดเฉพาะบุคคล",
-    generator: 'v0.dev'
-}
->>>>>>> 3110be9001eb33d02df1f88ef0dda4c5401410b4
 
 export default function RootLayout({
   children,
 }: Readonly<{
-<<<<<<< HEAD
   children: ReactNode
 }>) {
   const gtmId = process.env.NEXT_PUBLIC_GTM_ID || 'GTM-PG8P7JBS'
 
-=======
-  children: React.ReactNode
-}>) {
->>>>>>> 3110be9001eb33d02df1f88ef0dda4c5401410b4
   return (
     <html lang="th" className="scroll-smooth">
       <head>
@@ -104,12 +85,7 @@ export default function RootLayout({
           href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@300;400;500;600;700&display=swap"
           rel="stylesheet"
         />
-<<<<<<< HEAD
         <GoogleTagManager gtmId={gtmId} />
-        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-        <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#FF6B00" />
-        <meta name="msapplication-TileColor" content="#FF6B00" />
       </head>
       <body className="font-ibm-plex-sans-thai">
         {children}
@@ -117,14 +93,3 @@ export default function RootLayout({
     </html>
   )
 }
-=======
-      </head>
-      <body className="font-ibm-plex-sans-thai">{children}</body>
-    </html>
-  )
-}
-
-
-
-import './globals.css'
->>>>>>> 3110be9001eb33d02df1f88ef0dda4c5401410b4
