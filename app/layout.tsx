@@ -1,7 +1,14 @@
 import type { ReactNode } from "react"
-import { Metadata } from "next"
+import { Metadata, Viewport } from "next"
 import GoogleTagManager from '@/components/GoogleTagManager'
 import "./globals.css"
+
+// Add this separate viewport export
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 1,
+};
 
 export const metadata: Metadata = {
   title: 'Unicoach AI | แพลตฟอร์มเตรียมสอบเข้าด้วย AI สำหรับนักเรียน ม.1 และ ม.4',
@@ -50,16 +57,11 @@ export const metadata: Metadata = {
     images: ['https://unicoach.ai/og-image.jpg'],
   },
   icons: {
-    icon: '/favicon.ico',
-    apple: '/apple-touch-icon.png',
-    shortcut: '/favicon-16x16.png',
+    icon: '/favicon_io/favicon.ico',
+    apple: '/favicon_io/apple-touch-icon.png',
+    shortcut: '/favicon_io/favicon-16x16.png',
   },
-  manifest: 'https://unicoach.ai/site.webmanifest',
-  viewport: {
-    width: 'device-width',
-    initialScale: 1,
-    maximumScale: 1,
-  },
+  manifest: '/favicon_io/site.webmanifest',
   verification: {
     google: 'google-site-verification-code', // Replace with your actual verification code
     yandex: 'yandex-verification-code', // Replace with your actual verification code if you use Yandex
@@ -84,10 +86,6 @@ export default function RootLayout({
           rel="stylesheet"
         />
         <GoogleTagManager gtmId={gtmId} />
-        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-        <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#FF6B00" />
-        <meta name="msapplication-TileColor" content="#FF6B00" />
       </head>
       <body className="font-ibm-plex-sans-thai">
         {children}
