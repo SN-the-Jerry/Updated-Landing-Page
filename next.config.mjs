@@ -21,6 +21,11 @@ const nextConfig = {
     webpackBuildWorker: false,
     parallelServerBuildTraces: false,
     parallelServerCompiles: false,
+=======
+    webpackBuildWorker: true,
+    parallelServerBuildTraces: true,
+    parallelServerCompiles: true,
+>>>>>>> 3110be9001eb33d02df1f88ef0dda4c5401410b4
   },
 }
 
@@ -46,4 +51,8 @@ function mergeConfig(nextConfig, userConfig) {
   }
 }
 
+<<<<<<< HEAD
 export default nextConfig;
+=======
+export default nextConfig
+>>>>>>> 3110be9001eb33d02df1f88ef0dda4c5401410b4

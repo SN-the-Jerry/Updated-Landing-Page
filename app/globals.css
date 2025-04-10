@@ -70,7 +70,10 @@
   * {
     @apply border-border;
   }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 3110be9001eb33d02df1f88ef0dda4c5401410b4
   body {
     @apply bg-background text-foreground;
   }
@@ -80,6 +83,7 @@
   font-family: "IBM Plex Sans Thai", sans-serif;
 }
 
+<<<<<<< HEAD
 .swiper-pagination-bullet {
   @apply bg-primary opacity-50 !important;
 }
@@ -246,3 +250,5 @@
 .animate-bounce-subtle {
   animation: bounce-subtle 2s ease-in-out infinite;
 }
+=======
+>>>>>>> 3110be9001eb33d02df1f88ef0dda4c5401410b4
