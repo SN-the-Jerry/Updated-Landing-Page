@@ -1,7 +1,14 @@
 import type { ReactNode } from "react"
-import { Metadata } from "next"
+import { Metadata, Viewport } from "next"
 import GoogleTagManager from '@/components/GoogleTagManager'
 import "./globals.css"
+
+// Add this separate viewport export
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 1,
+};
 
 export const metadata: Metadata = {
   title: 'Unicoach AI | แพลตฟอร์มเตรียมสอบเข้าด้วย AI สำหรับนักเรียน ม.1 และ ม.4',
@@ -55,11 +62,7 @@ export const metadata: Metadata = {
     shortcut: '/favicon-16x16.png',
   },
   manifest: 'https://unicoach.ai/site.webmanifest',
-  viewport: {
-    width: 'device-width',
-    initialScale: 1,
-    maximumScale: 1,
-  },
+  // Remove viewport from here
   verification: {
     google: 'google-site-verification-code', // Replace with your actual verification code
     yandex: 'yandex-verification-code', // Replace with your actual verification code if you use Yandex

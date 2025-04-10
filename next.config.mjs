@@ -17,6 +17,7 @@ const nextConfig = {
     unoptimized: true,
   },
   experimental: {
+    allowedDevOrigins: ['localhost', '192.168.243.69'],
     webpackBuildWorker: false,
     parallelServerBuildTraces: false,
     parallelServerCompiles: false,
