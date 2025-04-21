@@ -21,6 +21,10 @@ const nextConfig = {
     parallelServerBuildTraces: false,
     parallelServerCompiles: false,
   },
+
+  env: {
+    NEXT_PUBLIC_GTM_ID: process.env.NEXT_PUBLIC_GTM_ID,
+  },
 }
 
 mergeConfig(nextConfig, userConfig)
