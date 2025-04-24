@@ -8,6 +8,13 @@ module.exports = {
     "./src/**/*.{ts,tsx}",
     "*.{js,ts,jsx,tsx,mdx}",
   ],
+  safelist: [
+    'text-white',
+    'text-gray-100',
+    'text-gray-900',
+    'text-blue-100',
+    'text-blue-900',
+  ],
   theme: {
     container: {
       center: true,
@@ -51,6 +58,16 @@ module.exports = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        'high-contrast': {
+          light: '#f8fafc',
+          dark: '#0f175a',
+        },
+        rose: {
+          100: '#ffadb3',
+        },
+        gray: {
+          500: '#a1a8b3',
+        }
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -75,4 +92,3 @@ module.exports = {
   },
   plugins: [require("tailwindcss-animate")],
 }
-

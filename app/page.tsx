@@ -214,6 +214,8 @@ export default function Home() {
                 fill
                 className="object-contain p-2"
                 priority
+                sizes="(max-width: 768px) 100vw, 50vw"
+                quality={80}
               />
             </div>
           </motion.div>
@@ -636,7 +638,7 @@ export default function Home() {
 
           <div className="flex flex-wrap justify-center items-center gap-8">
             {[
-              { img: "/uniclass.png", name: "Uniclass" },
+              { img: "/uniclass.jpg", name: "Uniclass" },
               { img: "/tedfund.png", name: "TED Fund" },
 
             ].map((partner, index) => (
@@ -647,7 +649,12 @@ export default function Home() {
                   width={160}
                   height={60}
                   className="mx-auto mb-2"
+                  onError={(e) => {
+                    e.target.onerror = null;
+                    e.target.src = "/placeholder.png"; // Fallback image
+                  }}
                 />
+
                 <p className="text-sm text-gray-600 font-bold">{partner.name}</p>
               </div>
             ))}

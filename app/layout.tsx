@@ -2,12 +2,19 @@ import type { ReactNode } from "react"
 import { Metadata, Viewport } from "next"
 import GoogleTagManager from '@/components/GoogleTagManager'
 import "./globals.css"
+import { IBM_Plex_Sans_Thai } from 'next/font/google';
+
+// Initialize the font
+const ibmPlexSansThai = IBM_Plex_Sans_Thai({
+  weight: ['300', '400', '500', '600', '700'],
+  subsets: ['thai', 'latin'],
+  display: 'swap', // This ensures text remains visible during font loading
+});
 
 // Add this separate viewport export
 export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
-  maximumScale: 1,
 };
 
 export const metadata: Metadata = {
@@ -79,12 +86,12 @@ export default function RootLayout({
   const gtmId = process.env.NEXT_PUBLIC_GTM_ID || 'GTM-PG8P7JBS'
 
   return (
-    <html lang="th" className="scroll-smooth">
+    <html lang="th" className={`scroll-smooth ${ibmPlexSansThai.className}`}>
       <head>
-        <link
+        {/* <link
           href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@300;400;500;600;700&display=swap"
           rel="stylesheet"
-        />
+        /> */}
         <GoogleTagManager gtmId={gtmId} />
       </head>
       <body className="font-ibm-plex-sans-thai">
