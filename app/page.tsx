@@ -638,7 +638,7 @@ export default function Home() {
 
           <div className="flex flex-wrap justify-center items-center gap-8">
             {[
-              { img: "/uniclass.jpg", name: "Uniclass" },
+              { img: "/uniclass.png", name: "Uniclass" },
               { img: "/tedfund.png", name: "TED Fund" },
 
             ].map((partner, index) => (
