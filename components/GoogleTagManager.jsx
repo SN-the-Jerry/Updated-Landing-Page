@@ -2,6 +2,7 @@
 'use client'
 
 import { useEffect } from 'react'
+import Script from 'next/script'
 
 export default function GoogleTagManager({ gtmId }) {
   useEffect(() => {
@@ -15,11 +16,13 @@ export default function GoogleTagManager({ gtmId }) {
 
   return (
     <>
-      <script
-        async
+      <Script
+        strategy="afterInteractive"
         src={`https://www.googletagmanager.com/gtag/js?id=${gtmId}`}
       />
-      <script
+      <Script
+        id="gtm-script"
+        strategy="afterInteractive"
         dangerouslySetInnerHTML={{
           __html: `
             window.dataLayer = window.dataLayer || [];

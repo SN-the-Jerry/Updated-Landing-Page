@@ -21,9 +21,11 @@ const customAnimations = {
 };
 
 export default function Home() {
+  const [isMounted, setIsMounted] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
+    setIsMounted(true);
     window.dataLayer = window.dataLayer || [];
     window.dataLayer.push({
       'event': 'testEvent',
@@ -31,6 +33,11 @@ export default function Home() {
     });
     console.log('Test event pushed to dataLayer');
   }, []);
+
+  // Skip client-side rendering until component is mounted
+  if (!isMounted) {
+    return null; // Or a simple loading skeleton
+  }
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -63,7 +70,7 @@ export default function Home() {
       from: "from-violet-400",
       to: "to-violet-600",
       bg: "bg-violet-50",
-      text: "text-violet-600",
+      text:"text-violet-600",
       border: "border-violet-200"
     }
   };
@@ -71,15 +78,7 @@ export default function Home() {
   return (
     <main className="flex min-h-screen flex-col bg-gray-50">
 
-      {/* SEO Component */}
-      <SEO
-        title="Unicoach AI | แพลตฟอร์มเตรียมสอบเข้าด้วย AI สำหรับนักเรียน ม.1 และ ม.4"
-        description="Unicoach AI ช่วยให้นักเรียนเตรียมสอบเข้าโรงเรียนชั้นนำได้อย่างมีประสิทธิภาพ ด้วยการวิเคราะห์จุดแข็งจุดอ่อนและสร้างแบบฝึกหัดเฉพาะบุคคล"
-        canonical="https://unicoach.ai"
-        ogImage="https://unicoach.ai/og-image.jpg"
-        ogType="website"
-        twitterHandle="@unicoach"
-      />
+      
 
       {/* Navbar - Updated with cleaner design */}
       <nav className="sticky top-0 z-50 bg-gradient-to-r from-blue-50 via-white to-violet-50 border-b border-blue-200 shadow-md">
@@ -124,7 +123,7 @@ export default function Home() {
           {/* Logo - Right side on mobile, left side on desktop */}
           <div className="flex items-center w-[120px] h-[30px] md:absolute md:left-6 md:top-1/2 md:transform md:-translate-y-1/2">
             <Image
-              src="/logo.svg"
+              src="/logo.webp"
               alt="Unicoach AI Logo"
               width={140}
               height={50}
@@ -209,7 +208,7 @@ export default function Home() {
             <div className="relative h-[380px] md:h-[400px] lg:h-[410px] w-full">
               <div className="absolute inset-0 rounded-2xl bg-blue-100/30 border border-blue-200"></div>
               <Image
-                src="/4.png"
+                src="/4.webp"
                 alt="นักเรียนกำลังใช้ Unicoach AI"
                 fill
                 className="object-contain p-2"
@@ -488,7 +487,7 @@ export default function Home() {
                     <CardContent className="p-4 flex flex-col items-center">
                       <div className="w-16 h-16 bg-blue-50 rounded-full flex items-center justify-center mb-3 overflow-hidden border border-blue-100">
                         <img
-                          src={`/university_images/${school.toLowerCase().replace(/ /g, "-")}.jpg`}
+                          src={`/university_images/${school.toLowerCase().replace(/ /g, "-")}.webp`}
                           alt={school}
                           className="w-full h-full object-cover"
                           onError={(e) => {
@@ -517,7 +516,7 @@ export default function Home() {
                     <CardContent className="p-4 flex flex-col items-center">
                       <div className="w-16 h-16 bg-blue-50 rounded-full flex items-center justify-center mb-3 overflow-hidden border border-blue-100">
                         <img
-                          src={`/university_images/${school.toLowerCase().replace(/ /g, "-")}.jpg`}
+                          src={`/university_images/${school.toLowerCase().replace(/ /g, "-")}.webp`}
                           alt={school}
                           className="w-full h-full object-cover"
                           onError={(e) => {
@@ -590,19 +589,19 @@ export default function Home() {
           <div className="grid md:grid-cols-3 gap-6">
             {[
               {
-                img: "/per1.jpg",
+                img: "/per1.webp",
                 name: "น้องมิน",
                 title: "สอบติดโรงเรียนเตรียมอุดมศึกษา",
                 quote: "Unicoach AI ช่วยให้หนูเข้าใจจุดอ่อนของตัวเองและฝึกฝนได้ตรงจุด ทำให้สอบติดโรงเรียนในฝันได้สำเร็จ"
               },
               {
-                img: "/per2.jpg",
+                img: "/per2.webp",
                 name: "น้องเบนซ์",
                 title: "สอบติดโรงเรียนสวนกุหลาบวิทยาลัย",
                 quote: "ผมชอบที่ Unicoach AI มีแนวข้อสอบเฉพาะของโรงเรียนที่ผมอยากเข้า ทำให้เตรียมตัวได้ตรงจุดมากๆ"
               },
               {
-                img: "/per3.jpg",
+                img: "/per3.webp",
                 name: "คุณแม่น้องแพร",
                 title: "ผู้ปกครอง",
                 quote: "ประหยัดค่าใช้จ่ายได้มากเมื่อเทียบกับการเรียนพิเศษแบบเดิม ลูกสาวได้ฝึกฝนตามความต้องการและสอบติดโรงเรียนที่หวัง"
@@ -638,8 +637,8 @@ export default function Home() {
 
           <div className="flex flex-wrap justify-center items-center gap-8">
             {[
-              { img: "/uniclass.png", name: "Uniclass" },
-              { img: "/tedfund.png", name: "TED Fund" },
+              { img: "/uniclass.webp", name: "Uniclass" },
+              { img: "/tedfund.webp", name: "TED Fund" },
 
             ].map((partner, index) => (
               <div key={index} className="text-center bg-white p-4 rounded-lg border border-blue-100 shadow-sm hover:shadow-md transition-all duration-300 hover:border-blue-300">
@@ -721,7 +720,7 @@ export default function Home() {
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center bg-gradient-to-r from-emerald-600 to-emerald-800 text-white font-medium rounded-lg px-4 py-2 hover:from-green-600 hover:to-green-500 transition-all duration-300 shadow-md"
               >
-                <img src="/line.png" alt="LINE" width={30} height={30} className="mr-3 transition-transform" />
+                <img src="/line.webp" alt="LINE" width={30} height={30} className="mr-3 transition-transform" />
                 <span>เพิ่มเพื่อน</span>
               </a>
               <a
@@ -745,7 +744,7 @@ export default function Home() {
             <div>
               <div className="mb-4">
                 <Image
-                  src="/unicoach.logo.png"
+                  src="/unicoach.logo.webp"
                   alt="Unicoach AI Logo"
                   width={100}
                   height={30}
@@ -757,7 +756,7 @@ export default function Home() {
               </p>
               <div className="flex space-x-4">
                 <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                  <Image src="/facebook.png" alt="Facebook" width={20} height={20} />
+                  <Image src="/facebook.webp" alt="Facebook" width={20} height={20} />
                 </a>
                 <a href="#" className="text-gray-400 hover:text-white transition-colors">
                   <Image src="/tiktok2.png" alt="TikTok" width={20} height={20} />
