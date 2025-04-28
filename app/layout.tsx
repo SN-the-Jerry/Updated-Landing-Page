@@ -3,6 +3,7 @@ import { Metadata, Viewport } from "next"
 import GoogleTagManager from '@/components/GoogleTagManager'
 import "./globals.css"
 import { IBM_Plex_Sans_Thai } from 'next/font/google';
+import Script from 'next/script';
 
 // Initialize the font
 const ibmPlexSansThai = IBM_Plex_Sans_Thai({
@@ -88,10 +89,7 @@ export default function RootLayout({
   return (
     <html lang="th" className={`scroll-smooth ${ibmPlexSansThai.className}`}>
       <head>
-        {/* <link
-          href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@300;400;500;600;700&display=swap"
-          rel="stylesheet"
-        /> */}
+        <script src="http://localhost:8097"></script>
         <GoogleTagManager gtmId={gtmId} />
       </head>
       <body className="font-ibm-plex-sans-thai">
