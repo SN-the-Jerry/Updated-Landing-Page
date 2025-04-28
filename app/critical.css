@@ -1,0 +1,21 @@
+export default function RootLayout({ children }) {
+    return (
+      <html>
+        <head>
+          <link
+            rel="stylesheet"
+            href="/critical.css"
+            // Critical CSS should be loaded immediately
+          />
+          <link
+            rel="stylesheet" 
+            href="/non-critical.css"
+            // Load non-critical CSS asynchronously
+            media="print" 
+            onLoad="this.media='all'" 
+          />
+        </head>
+        <body>{children}</body>
+      </html>
+    );
+  }
