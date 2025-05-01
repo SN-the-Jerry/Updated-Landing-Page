@@ -1,18 +1,27 @@
-// components/GoogleTagManager.jsx
 'use client'
-
 import { useEffect } from 'react'
 import Script from 'next/script'
 
-export default function GoogleTagManager({ gtmId }) {
+interface GoogleTagManagerProps {
+  gtmId: string;
+}
+
+export default function GoogleTagManager({ gtmId }: GoogleTagManagerProps) {
   useEffect(() => {
-    window.dataLayer = window.dataLayer || []
-    function gtag() {
-      dataLayer.push(arguments)
+    if (typeof window !== 'undefined') {
+      window.dataLayer = window.dataLayer || []
+      function gtag(...args: any[]) {
+        window.dataLayer.push(args)
+      }
+      gtag('js', new Date())
+      gtag('config', gtmId)
     }
-    gtag('js', new Date())
-    gtag('config', gtmId)
   }, [gtmId])
+
+  // Only render scripts on client side
+  if (typeof window === 'undefined') {
+    return null;
+  }
 
   return (
     <>
