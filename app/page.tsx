@@ -756,7 +756,7 @@ export default function Home() {
 
               <div className="flex flex-col sm:flex-row justify-center items-center gap-5">
                 <a
-                  href="https://line.me/R/ti/p/@unicoach"
+                  href="https://lin.ee/ZHfiSqG"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center justify-center bg-gradient-to-r from-emerald-600 to-emerald-800 text-white font-medium rounded-lg px-4 py-2 hover:from-green-600 hover:to-green-500 transition-all duration-300 shadow-md"
@@ -765,7 +765,7 @@ export default function Home() {
                   <span>เพิ่มเพื่อน</span>
                 </a>
                 <a
-                  href="https://m.me/unicoach"
+                  href="https://www.facebook.com/share/1941rAV3Wr/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center justify-center bg-gradient-to-r from-blue-500 to-blue-700 text-white font-medium rounded-lg px-4 py-2 hover:from-blue-600 hover:to-blue-500 transition-all duration-300 shadow-md"
