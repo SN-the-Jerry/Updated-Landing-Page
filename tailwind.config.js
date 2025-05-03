@@ -14,6 +14,8 @@ module.exports = {
     'text-gray-900',
     'text-blue-100',
     'text-blue-900',
+    'text-rose-100',
+    'bg-rose-500',
   ],
   theme: {
     container: {
@@ -59,14 +61,15 @@ module.exports = {
           foreground: "hsl(var(--card-foreground))",
         },
         'high-contrast': {
-          light: '#f8fafc',
-          dark: '#0f175a',
+          light: '#ffffff',
+          dark: '#000000',
         },
         rose: {
-          100: '#ffadb3',
+          100: '#e11d48',
+          500: '#be123c',
         },
         gray: {
-          500: '#a1a8b3',
+          500: '#6b7280',
         }
       },
       borderRadius: {
