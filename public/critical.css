@@ -1,0 +1,28 @@
+/* Critical CSS for above-the-fold content */
+body {
+    font-family: 'IBM Plex Sans Thai', sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+  
+  /* Navbar styles */
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: linear-gradient(to right, #f0f7ff, #ffffff, #f9f5ff);
+    border-bottom: 1px solid #e0eaff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  }
+  
+  /* Hero section critical styles */
+  .hero-section {
+    background: linear-gradient(to bottom right, #f0f7ff, #ffffff);
+    padding: 3rem 0;
+  }

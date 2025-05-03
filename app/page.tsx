@@ -34,6 +34,14 @@ function TimeDisplay() {
   return <span className="ml-4">{time}</span>;
 }
 
+const TestimonialsSection = dynamic(() => import('@/components/TestimonialsSection'), {
+  loading: () => <div className="h-60 animate-pulse bg-gray-100 rounded-md"></div>
+})
+
+const FAQSection = dynamic(() => import('@/components/FAQSection'), {
+  loading: () => <div className="h-60 animate-pulse bg-gray-100 rounded-md"></div>
+})
+
 // Define custom animations for Tailwind CSS
 const customAnimations = {
   fadeIn: "opacity-0 animate-[fadeIn_1s_ease-in-out_forwards]",
@@ -166,6 +174,7 @@ export default function Home() {
                 width={140}
                 height={50}
                 className="transition-transform duration-300 hover:scale-105"
+                priority // Add priority attribute to above-the-fold images
               />
             </div>
           </div>
@@ -243,15 +252,15 @@ export default function Home() {
               </div>
 
               {/* Image display - Larger display with proper positioning */}
-              <div className="relative h-[380px] md:h-[400px] lg:h-[410px] w-full">
-                <div className="absolute inset-0 rounded-2xl bg-blue-100/30 border border-blue-200"></div>
+              <div className="relative w-full">
+                <div className="rounded-2xl bg-blue-100/30 border border-blue-200"></div>
                 <Image
                   src="/4.webp"
                   alt="นักเรียนกำลังใช้ Unicoach AI"
-                  fill
-                  className="object-contain p-2"
+                  width={500}
+                  height={400}
+                  className="object-contain w-full"
                   priority
-                  sizes="(max-width: 768px) 100vw, 50vw"
                   quality={80}
                 />
               </div>
@@ -521,23 +530,17 @@ export default function Home() {
                     "โรงเรียนสตรีวิทยา",
                     "โรงเรียนเตรียมอุดมศึกษาพัฒนาการ",
                   ].map((school, index) => (
-                    <Card key={index} className="overflow-hidden border border-blue-100 hover:border-blue-300 hover:shadow-md transition-all duration-300">
-                      <CardContent className="p-4 flex flex-col items-center">
-                        <div className="w-16 h-16 bg-blue-50 rounded-full flex items-center justify-center mb-3 overflow-hidden border border-blue-100">
-                          <img
-                            src={`/university_images/${school.toLowerCase().replace(/ /g, "-")}.webp`}
-                            alt={school}
-                            className="w-full h-full object-cover"
-                            onError={(e: React.SyntheticEvent<HTMLImageElement>) => {
-                              const target = e.currentTarget;
-                              target.onerror = null;
-                              target.src = "/university_images/default.png";
-                            }}
-                          />
-                        </div>
-                        <h3 className="text-center text-sm font-medium">{school}</h3>
-                      </CardContent>
-                    </Card>
+                    <div key={index} className="flex flex-col items-center p-3 border border-blue-100 rounded-md hover:border-blue-300 hover:shadow-md transition-all">
+                      <img
+                        src={`/university_images/${school.toLowerCase().replace(/ /g, "-")}.webp`}
+                        alt={school}
+                        width={48}
+                        height={48}
+                        className="w-12 h-12 mb-2 rounded-full object-cover bg-blue-50"
+                        onError={(e) => { e.currentTarget.src = "/university_images/default.png" }}
+                      />
+                      <span className="text-center text-sm font-medium">{school}</span>
+                    </div>
                   ))}
                 </div>
               </TabsContent>
@@ -621,55 +624,6 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Social Proof - Updated with modern testimonial cards */}
-        <section id="testimonials" className="py-16 bg-white">
-          <div className="container mx-auto px-4">
-            <h2 className="text-3xl text-black font-bold text-center mb-12">เสียงจากผู้ใช้งานจริง</h2>
-
-            <div className="grid md:grid-cols-3 gap-6">
-              {[
-                {
-                  img: "/per1.webp",
-                  name: "น้องมิน",
-                  title: "สอบติดโรงเรียนเตรียมอุดมศึกษา",
-                  quote: "Unicoach AI ช่วยให้หนูเข้าใจจุดอ่อนของตัวเองและฝึกฝนได้ตรงจุด ทำให้สอบติดโรงเรียนในฝันได้สำเร็จ"
-                },
-                {
-                  img: "/per2.webp",
-                  name: "น้องเบนซ์",
-                  title: "สอบติดโรงเรียนสวนกุหลาบวิทยาลัย",
-                  quote: "ผมชอบที่ Unicoach AI มีแนวข้อสอบเฉพาะของโรงเรียนที่ผมอยากเข้า ทำให้เตรียมตัวได้ตรงจุดมากๆ"
-                },
-                {
-                  img: "/per3.webp",
-                  name: "คุณแม่น้องแพร",
-                  title: "ผู้ปกครอง",
-                  quote: "ประหยัดค่าใช้จ่ายได้มากเมื่อเทียบกับการเรียนพิเศษแบบเดิม ลูกสาวได้ฝึกฝนตามความต้องการและสอบติดโรงเรียนที่หวัง"
-                },
-              ].map((item, index) => (
-                <div key={index} className="bg-white border border-blue-100 p-6 rounded-lg shadow-sm transform transition-all duration-300 hover:-translate-y-2 hover:shadow-md hover:border-blue-300">
-                  <div className="flex items-center mb-4">
-                    <div className="w-12 h-12 bg-blue-50 rounded-full overflow-hidden mr-4 border border-blue-100">
-                      <Image src={item.img} alt="นักเรียน" width={48} height={48} />
-                    </div>
-                    <div>
-                      <h3 className="font-semibold">{item.name}</h3>
-                      <p className="text-sm text-black">{item.title}</p>
-                    </div>
-                  </div>
-                  <div className="relative">
-                    <div className="absolute -top-2 -left-2 text-4xl text-blue-200">"</div>
-                    <p className="text-black italic pl-6 pr-2 relative z-10">
-                      {item.quote}
-                    </p>
-                    <div className="absolute -bottom-4 -right-1 text-4xl text-blue-200">"</div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
         {/* Partners & Support */}
         <section className="py-16 bg-gray-50">
           <div className="container mx-auto px-4">
@@ -696,39 +650,6 @@ export default function Home() {
                   />
 
                   <p className="text-sm text-gray-600 font-bold">{partner.name}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* FAQ Section */}
-        <section id="faq" className="py-16 bg-white">
-          <div className="container mx-auto px-4">
-            <h2 className="text-3xl font-bold text-center mb-12">คำถามที่พบบ่อย</h2>
-
-            <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-              {[
-                {
-                  q: "Unicoach AI เหมาะกับนักเรียนระดับไหนบ้าง?",
-                  a: "Unicoach AI เหมาะสำหรับนักเรียนที่ต้องการเตรียมสอบเข้าโรงเรียนระดับชั้น ม.1 และ ม.4 โดยมีเนื้อหาและแบบฝึกหัดที่ปรับให้เหมาะกับแต่ละระดับชั้น"
-                },
-                {
-                  q: "AI วิเคราะห์จุดแข็งจุดอ่อนได้แม่นยำแค่ไหน?",
-                  a: "AI ของเราพัฒนาจากข้อมูลการทำข้อสอบของนักเรียนหลายหมื่นคน และมีความแม่นยำในการวิเคราะห์จุดแข็งจุดอ่อนสูงถึง 95% โดยสามารถระบุหัวข้อและทักษะย่อยที่นักเรียนต้องพัฒนาได้อย่างเฉพาะเจาะจง"
-                },
-                {
-                  q: "มีการรับประกันผลการสอบหรือไม่?",
-                  a: "สำหรับแพ็คเกจพรีเมียม เรามีการรับประกันผลการสอบ หากนักเรียนทำตามแผนการเรียนที่กำหนดอย่างเคร่งครัดและไม่สามารถสอบผ่านได้ เราจะคืนเงินให้ 100% ตามเงื่อนไขที่กำหนด"
-                },
-                {
-                  q: "สามารถใช้งานบนอุปกรณ์ใดได้บ้าง?",
-                  a: "Unicoach AI สามารถใช้งานได้บนทุกอุปกรณ์ผ่านแอพ LINE ไม่ว่าจะเป็นสมาร์ทโฟน แท็บเล็ต หรือคอมพิวเตอร์ ทำให้นักเรียนสามารถเรียนรู้ได้ทุกที่ทุกเวลา"
-                },
-              ].map((item, index) => (
-                <div key={index} className="bg-white border border-blue-100 rounded-lg p-6 hover:shadow-md transition-all duration-300 hover:border-blue-300">
-                  <h3 className="text-lg font-semibold mb-3">{item.q}</h3>
-                  <p className="text-gray-700">{item.a}</p>
                 </div>
               ))}
             </div>
