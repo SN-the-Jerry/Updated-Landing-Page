@@ -1,3 +1,5 @@
 interface Window {
-    dataLayer: any[];
-  }
+  dataLayer: any[];
+  fbq: any;
+  _fbq: any;
+}

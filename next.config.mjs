@@ -34,6 +34,7 @@ const nextConfig = {
   compress: true, // Enable compression
   env: {
     NEXT_PUBLIC_GTM_ID: process.env.NEXT_PUBLIC_GTM_ID,
+    NEXT_PUBLIC_META_PIXEL_ID: process.env.NEXT_PUBLIC_META_PIXEL_ID,
   },
   // Add webpack analyzer if you want to analyze your bundle size
   webpack: (config, { isServer }) => {

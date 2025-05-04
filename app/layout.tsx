@@ -15,6 +15,7 @@ export { metadata, viewport };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   const gtmId = process.env.NEXT_PUBLIC_GTM_ID || 'GTM-PG8P7JBS';
+  const metaPixelId = process.env.NEXT_PUBLIC_META_PIXEL_ID || '4171444363089620';
 
   return (
     <html lang="th" className={`scroll-smooth ${ibmPlexSansThai.className}`} suppressHydrationWarning={true}>
@@ -29,10 +30,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
         {/* Preconnect to Google Tag Manager */}
         <link rel="preconnect" href="https://www.googletagmanager.com" crossOrigin="" />
+         {/* Preconnect to Meta Pixel domain */}
+         <link rel="preconnect" href="https://connect.facebook.net" crossOrigin="" />
       </head>
       <body className="font-ibm-plex-sans-thai">
         {children}
-        <ClientScripts gtmId={gtmId} />
+        <ClientScripts gtmId={gtmId} metaPixelId={metaPixelId} />
       </body>
     </html>
   );
