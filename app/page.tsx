@@ -501,24 +501,30 @@ export default function Home() {
         </section>
 
         {/* Target Schools Showcase */}
-        <section id="schools" className="py-16 bg-white">
+        <section id="schools" className="py-16 bg-white" aria-labelledby="schools-heading">
           <div className="container mx-auto px-4">
-            <h2 className="text-3xl text-black font-bold text-center mb-12">โรงเรียนเป้าหมาย</h2>
+            <h2 id="schools-heading" className="text-3xl text-black font-bold text-center mb-12">โรงเรียนเป้าหมาย</h2>
 
             <Tabs defaultValue="m1" className="w-full">
               <div className="flex justify-center mb-8">
-                <TabsList className="border border-blue-100">
-                  <TabsTrigger value="m1" className="px-8 data-[state=active]:bg-blue-600 data-[state=active]:text-white">
+                <TabsList aria-label="ระดับชั้นการศึกษา" className="border border-blue-100">
+                  <TabsTrigger
+                    value="m1"
+                    className="px-8 data-[state=active]:bg-blue-600 data-[state=active]:text-white focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                  >
                     ม.1
                   </TabsTrigger>
-                  <TabsTrigger value="m4" className="px-8 data-[state=active]:bg-blue-600 data-[state=active]:text-white">
+                  <TabsTrigger
+                    value="m4"
+                    className="px-8 data-[state=active]:bg-blue-600 data-[state=active]:text-white focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                  >
                     ม.4
                   </TabsTrigger>
                 </TabsList>
               </div>
 
               <TabsContent value="m1">
-                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4" role="list">
                   {[
                     "โรงเรียนสวนกุหลาบวิทยาลัย",
                     "โรงเรียนสามเสนวิทยาลัย",
@@ -530,23 +536,34 @@ export default function Home() {
                     "โรงเรียนสตรีวิทยา",
                     "โรงเรียนเตรียมอุดมศึกษาพัฒนาการ",
                   ].map((school, index) => (
-                    <div key={index} className="flex flex-col items-center p-3 border border-blue-100 rounded-md hover:border-blue-300 hover:shadow-md transition-all">
-                      <img
-                        src={`/university_images/${school.toLowerCase().replace(/ /g, "-")}.webp`}
-                        alt={school}
-                        width={48}
-                        height={48}
-                        className="w-12 h-12 mb-2 rounded-full object-cover bg-blue-50"
-                        onError={(e) => { e.currentTarget.src = "/university_images/default.png" }}
-                      />
-                      <span className="text-center text-sm font-medium">{school}</span>
+                    <div
+                      key={index}
+                      className="flex flex-col items-center p-3 border border-blue-100 rounded-md hover:border-blue-300 hover:shadow-md transition-all focus-within:ring-2 focus-within:ring-blue-500"
+                      role="listitem"
+                    >
+                      <div className="w-12 h-12 mb-2 rounded-full overflow-hidden bg-blue-50">
+                        <img
+                          src={`/university_images/${school.toLowerCase().replace(/ /g, "-")}.webp`}
+                          alt={`ตราสัญลักษณ์${school}`}
+                          width={48}
+                          height={48}
+                          className="w-full h-full object-cover"
+                          onError={(e: React.SyntheticEvent<HTMLImageElement>) => {
+                            const target = e.currentTarget;
+                            target.onerror = null;
+                            target.src = "/university_images/default.png";
+                            target.alt = `ตราสัญลักษณ์${school} (ไม่พบรูปภาพ)`;
+                          }}
+                        />
+                      </div>
+                      <span className="text-center text-sm font-medium" aria-label={`โรงเรียนเป้าหมาย: ${school}`}>{school}</span>
                     </div>
                   ))}
                 </div>
               </TabsContent>
 
               <TabsContent value="m4">
-                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4" role="list">
                   {[
                     "โรงเรียนเตรียมอุดมศึกษา",
                     "โรงเรียนมหิดลวิทยานุสรณ์",
@@ -554,21 +571,26 @@ export default function Home() {
                     "โรงเรียนวิทยาศาสตร์จุฬาภรณราชวิทยาลัย",
                     "โรงเรียนสาธิตมหาวิทยาลัยศรีนครินทรวิโรฒประสานมิตร",
                   ].map((school, index) => (
-                    <Card key={index} className="overflow-hidden border border-blue-100 hover:border-blue-300 hover:shadow-md transition-all duration-300">
+                    <Card
+                      key={index}
+                      className="overflow-hidden border border-blue-100 hover:border-blue-300 hover:shadow-md transition-all duration-300 focus-within:ring-2 focus-within:ring-blue-500"
+                      role="listitem"
+                    >
                       <CardContent className="p-4 flex flex-col items-center">
                         <div className="w-16 h-16 bg-blue-50 rounded-full flex items-center justify-center mb-3 overflow-hidden border border-blue-100">
                           <img
                             src={`/university_images/${school.toLowerCase().replace(/ /g, "-")}.webp`}
-                            alt={school}
+                            alt={`ตราสัญลักษณ์${school}`}
                             className="w-full h-full object-cover"
                             onError={(e: React.SyntheticEvent<HTMLImageElement>) => {
                               const target = e.currentTarget;
                               target.onerror = null;
                               target.src = "/university_images/default.png";
+                              target.alt = `ตราสัญลักษณ์${school} (ไม่พบรูปภาพ)`;
                             }}
                           />
                         </div>
-                        <h3 className="text-center text-sm font-medium">{school}</h3>
+                        <h3 className="text-center text-sm font-medium" aria-label={`โรงเรียนเป้าหมาย: ${school}`}>{school}</h3>
                       </CardContent>
                     </Card>
                   ))}
@@ -718,12 +740,12 @@ export default function Home() {
                   แพลตฟอร์ม AI ที่ช่วยให้นักเรียนเตรียมสอบเข้าโรงเรียนได้อย่างมีประสิทธิภาพ
                 </p>
                 <div className="flex space-x-4">
-                  <a href="#" className="text-gray-400 hover:text-white transition-colors">
+                  <a href="https://www.facebook.com/share/1941rAV3Wr/" className="text-gray-400 hover:text-white transition-colors">
                     <Image src="/facebook.webp" alt="Facebook" width={20} height={20} />
                   </a>
-                  <a href="#" className="text-gray-400 hover:text-white transition-colors">
+                  {/* <a href="#" className="text-gray-400 hover:text-white transition-colors">
                     <Image src="/tiktok2.png" alt="TikTok" width={20} height={20} />
-                  </a>
+                  </a> */}
                 </div>
               </div>
 
@@ -733,7 +755,7 @@ export default function Home() {
                 <ul className="space-y-2">
                   <li className="flex items-center"><Mail className="h-4 w-4 mr-2 text-blue-400" /> admin@uniclass.io</li>
                   <li className="flex items-center"><Phone className="h-4 w-4 mr-2 text-blue-400" /> 09-178-24562</li>
-                  <li className="flex items-center"><Facebook className="h-4 w-4 mr-2 text-blue-400" /> facebook.com/unicoach.ai</li>
+                  <li className="flex items-center"><Facebook className="h-4 w-4 mr-2 text-blue-400" />Unicoach Facebook</li>
                   <li><a href="#" className="text-gray-400 hover:text-white transition-colors">นโยบายความเป็นส่วนตัว</a></li>
                   <li><a href="#" className="text-gray-400 hover:text-white transition-colors">เงื่อนไขการใช้งาน</a></li>
                 </ul>
