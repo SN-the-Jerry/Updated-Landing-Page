@@ -9,6 +9,8 @@ const ibmPlexSansThai = IBM_Plex_Sans_Thai({
   weight: ['400', '500', '700'],
   subsets: ['thai', 'latin'],
   display: 'swap',
+  variable: '--font-ibm-plex-sans-thai', // Add variable for font-family
+  preload: true, // Ensure preloading
 });
 
 export { metadata, viewport };
@@ -30,8 +32,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
         {/* Preconnect to Google Tag Manager */}
         <link rel="preconnect" href="https://www.googletagmanager.com" crossOrigin="" />
-         {/* Preconnect to Meta Pixel domain */}
-         <link rel="preconnect" href="https://connect.facebook.net" crossOrigin="" />
+        {/* Preconnect to Meta Pixel domain */}
+        <link rel="preconnect" href="https://connect.facebook.net" crossOrigin="" />
       </head>
       <body className="font-ibm-plex-sans-thai">
         {children}

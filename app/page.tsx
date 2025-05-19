@@ -221,11 +221,11 @@ export default function Home() {
 
         {/* Hero Section - With balanced typography and improved image display */}
         <section id="hero_section" className="bg-gradient-to-br from-blue-50 to-white py-12 md:py-16">
-          <div className="container mx-auto px-4">
+          <div className="container mx-auto px-4 content-visibility-auto">
             <MotionDiv
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity:1 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
+              transition={{ duration: 0.3 }}
               className="grid md:grid-cols-2 gap-8 items-center"
             >
               <div>
@@ -252,7 +252,7 @@ export default function Home() {
               </div>
 
               {/* Image display - Larger display with proper positioning */}
-              <div className="relative w-full">
+              <div className="relative w-full h-[400px]">
                 <div className="rounded-2xl bg-blue-100/30 border border-blue-200"></div>
                 <Image
                   src="/4.webp"
@@ -271,8 +271,8 @@ export default function Home() {
         {/* Problem-Solution Section - Ultra Modern Design with Animation */}
         <section id="about" className="py-30 bg-slate-50 relative overflow-hidden">
           {/* Decorative elements */}
-          <div className="absolute w-64 h-64 rounded-full bg-fuchsia-200 opacity-30 -top-20 -left-20 blur-3xl animate-pulse"></div>
-          <div className="absolute w-96 h-96 rounded-full bg-blue-200 opacity-30 -bottom-40 -right-20 blur-3xl animate-pulse"></div>
+          <div className="absolute w-64 h-64 rounded-full bg-fuchsia-200 opacity-30 -top-20 -left-20 blur-3xl animate-pulse" style={{willChange: 'auto'}}></div>
+          <div className="absolute w-96 h-96 rounded-full bg-blue-200 opacity-30 -bottom-40 -right-20 blur-3xl animate-pulse" style={{willChange: 'auto'}}></div>
 
           <div className="container mx-auto px-4 relative z-10">
             <div className="max-w-4xl mx-auto mb-16 text-center">
@@ -507,16 +507,16 @@ export default function Home() {
 
             <Tabs defaultValue="m1" className="w-full">
               <div className="flex justify-center mb-8">
-                <TabsList aria-label="ระดับชั้นการศึกษา" className="border border-blue-100">
+                <TabsList aria-label="ระดับชั้นการศึกษา" className="border border-blue-100 bg-white">
                   <TabsTrigger
                     value="m1"
-                    className="px-8 data-[state=active]:bg-blue-600 data-[state=active]:text-white focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                    className="px-8 text-blue-800 data-[state=active]:bg-blue-600 data-[state=active]:text-white focus:ring-2 focus:ring-blue-500 focus:outline-none"
                   >
                     ม.1
                   </TabsTrigger>
                   <TabsTrigger
                     value="m4"
-                    className="px-8 data-[state=active]:bg-blue-600 data-[state=active]:text-white focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                    className="px-8 text-blue-800 data-[state=active]:bg-blue-600 data-[state=active]:text-white focus:ring-2 focus:ring-blue-500 focus:outline-none"
                   >
                     ม.4
                   </TabsTrigger>
@@ -541,7 +541,7 @@ export default function Home() {
                       className="flex flex-col items-center p-3 border border-blue-100 rounded-md hover:border-blue-300 hover:shadow-md transition-all focus-within:ring-2 focus-within:ring-blue-500"
                       role="listitem"
                     >
-                      <div className="w-12 h-12 mb-2 rounded-full overflow-hidden bg-blue-50">
+                      <div className="w-12 h-12 mb-2 rounded-full overflow-hidden bg-blue-50 flex items-center justify-center" style={{aspectRatio: '1/1'}}>
                         <img
                           src={`/university_images/${school.toLowerCase().replace(/ /g, "-")}.webp`}
                           alt={`ตราสัญลักษณ์${school}`}
@@ -601,7 +601,7 @@ export default function Home() {
         </section>
 
         {/* Features & Benefits */}
-        <section id="features" className="py-16 bg-gray-50">
+        <section id="faq" className="py-16 bg-gray-50">
           <div className="container mx-auto px-4 py-2 relative ">
             <h2 className="text-3xl font-bold text-center mb-8">
               <span className="bg-gray-50">
@@ -732,7 +732,7 @@ export default function Home() {
                     alt="Unicoach AI Logo"
                     width={100}
                     height={30}
-                    className="transition-transform duration-300 hover:scale-105"
+                    className="transition-transform duration-300 hover:scale-105 w-auto h-auto"
                   />
 
                 </div>
@@ -756,14 +756,14 @@ export default function Home() {
                   <li className="flex items-center"><Mail className="h-4 w-4 mr-2 text-blue-400" /> admin@uniclass.io</li>
                   <li className="flex items-center"><Phone className="h-4 w-4 mr-2 text-blue-400" /> 09-178-24562</li>
                   <li className="flex items-center"><Facebook className="h-4 w-4 mr-2 text-blue-400" />Unicoach Facebook</li>
-                  <li><a href="#" className="text-gray-400 hover:text-white transition-colors">นโยบายความเป็นส่วนตัว</a></li>
-                  <li><a href="#" className="text-gray-400 hover:text-white transition-colors">เงื่อนไขการใช้งาน</a></li>
+                  <li><a href="#" className="text-gray-300 hover:text-white transition-colors">นโยบายความเป็นส่วนตัว</a></li>
+                  <li><a href="#" className="text-gray-300 hover:text-white transition-colors">เงื่อนไขการใช้งาน</a></li>
                 </ul>
               </div>
             </div>
 
             <div className="mt-10 pt-6 border-t border-gray-800 text-center">
-              <p className="text-gray-500" suppressHydrationWarning>
+              <p className="text-gray-300" suppressHydrationWarning>
                 &copy; {new Date().getFullYear()} Unicoach AI. All rights reserved.
                 <span className="ml-4" suppressHydrationWarning>{new Date().toLocaleTimeString()}</span>
                 <TimeDisplay />
