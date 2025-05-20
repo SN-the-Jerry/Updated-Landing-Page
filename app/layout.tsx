@@ -24,6 +24,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <head>
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="stylesheet" href="/critical.css" />
+
+        <link rel="preconnect" href="/" />
+        <link rel="preload" href="/4.webp" as="image" />
         <StylesheetLoader />
         {/* Preconnect to unicoach.cc domain */}
         <link rel="preconnect" href="https://unicoach.cc" crossOrigin="" />

@@ -2,10 +2,8 @@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Card, CardContent } from "@/components/ui/card"
 import { BookOpen, BarChart, Users, TrendingUp, DollarSign, Facebook, Mail, Phone } from "lucide-react"
-import { motion } from "framer-motion"
 import { useState, useEffect } from "react";
 import Image from "next/image"
-import SEO from "@/components/SEO" // Import the SEO component
 import dynamic from 'next/dynamic'
 
 const MotionDiv = dynamic(() =>
@@ -57,6 +55,14 @@ const customAnimations = {
 export default function Home() {
   const [isMounted, setIsMounted] = useState<boolean>(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState<boolean>(false);
+
+  // new effect for performance optimization
+  useEffect((): (() => void) => {
+    document.documentElement.style.setProperty('contain', 'content');
+    return () => {
+      document.documentElement.style.removeProperty('contain');
+    };
+  }, []);
 
   useEffect(() => {
     setIsMounted(true);
@@ -223,10 +229,11 @@ export default function Home() {
         <section id="hero_section" className="bg-gradient-to-br from-blue-50 to-white py-12 md:py-16">
           <div className="container mx-auto px-4 content-visibility-auto">
             <MotionDiv
-              initial={{ opacity:1 }}
+              initial={{ opacity: 1 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.3 }}
+              transition={{ duration: 0.5 }}
               className="grid md:grid-cols-2 gap-8 items-center"
+              style={{ willChange: 'transform' }}
             >
               <div>
                 <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6 leading-tight">
@@ -259,9 +266,9 @@ export default function Home() {
                   alt="นักเรียนกำลังใช้ Unicoach AI"
                   width={500}
                   height={400}
-                  className="object-contain w-full"
                   priority
-                  quality={80}
+                  loading="eager"
+                  sizes="(max-width: 768px) 100vw, 50vw"
                 />
               </div>
             </MotionDiv>
@@ -271,8 +278,8 @@ export default function Home() {
         {/* Problem-Solution Section - Ultra Modern Design with Animation */}
         <section id="about" className="py-30 bg-slate-50 relative overflow-hidden">
           {/* Decorative elements */}
-          <div className="absolute w-64 h-64 rounded-full bg-fuchsia-200 opacity-30 -top-20 -left-20 blur-3xl animate-pulse" style={{willChange: 'auto'}}></div>
-          <div className="absolute w-96 h-96 rounded-full bg-blue-200 opacity-30 -bottom-40 -right-20 blur-3xl animate-pulse" style={{willChange: 'auto'}}></div>
+          <div className="absolute w-64 h-64 rounded-full bg-fuchsia-200 opacity-30 -top-20 -left-20 blur-3xl animate-pulse" style={{ willChange: 'auto' }}></div>
+          <div className="absolute w-96 h-96 rounded-full bg-blue-200 opacity-30 -bottom-40 -right-20 blur-3xl animate-pulse" style={{ willChange: 'auto' }}></div>
 
           <div className="container mx-auto px-4 relative z-10">
             <div className="max-w-4xl mx-auto mb-16 text-center">
@@ -541,7 +548,7 @@ export default function Home() {
                       className="flex flex-col items-center p-3 border border-blue-100 rounded-md hover:border-blue-300 hover:shadow-md transition-all focus-within:ring-2 focus-within:ring-blue-500"
                       role="listitem"
                     >
-                      <div className="w-12 h-12 mb-2 rounded-full overflow-hidden bg-blue-50 flex items-center justify-center" style={{aspectRatio: '1/1'}}>
+                      <div className="w-12 h-12 mb-2 rounded-full overflow-hidden bg-blue-50 flex items-center justify-center" style={{ aspectRatio: '1/1' }}>
                         <img
                           src={`/university_images/${school.toLowerCase().replace(/ /g, "-")}.webp`}
                           alt={`ตราสัญลักษณ์${school}`}
@@ -655,22 +662,21 @@ export default function Home() {
               {[
                 { img: "/uniclass.webp", name: "Uniclass" },
                 { img: "/tedfund.webp", name: "TED Fund" },
-
               ].map((partner, index) => (
                 <div key={index} className="text-center bg-white p-4 rounded-lg border border-blue-100 shadow-sm hover:shadow-md transition-all duration-300 hover:border-blue-300">
                   <Image
                     src={partner.img}
                     alt={partner.name}
                     width={160}
-                    height={60}
-                    className="mx-auto mb-2"
+                    height={40}
+                    className="mx-auto mb-2 w-auto h-auto" // Add w-auto h-auto to maintain aspect ratio
+                    style={{ objectFit: "contain" }} // Add this style
                     onError={(e: React.SyntheticEvent<HTMLImageElement>) => {
                       const target = e.currentTarget;
                       target.onerror = null;
                       target.src = "/placeholder.png";
                     }}
                   />
-
                   <p className="text-sm text-gray-600 font-bold">{partner.name}</p>
                 </div>
               ))}
@@ -730,9 +736,10 @@ export default function Home() {
                   <Image
                     src="/unicoach.logo.webp"
                     alt="Unicoach AI Logo"
-                    width={100}
-                    height={30}
+                    width={60}
+                    height={20}
                     className="transition-transform duration-300 hover:scale-105 w-auto h-auto"
+                    style={{ objectFit: "contain" }}
                   />
 
                 </div>

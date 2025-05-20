@@ -75,6 +75,10 @@ const nextConfig = {
         ],
       },
       {
+        source: '/optimized/(.*)',
+        headers: [{ key: 'Cache-Control', value: 'public, max-age=31536000, immutable' }]
+      },
+      {
         source: '/(.*).(jpg|jpeg|png|webp|avif|ico|svg)',
         headers: [
           {
@@ -114,7 +118,7 @@ function mergeConfig(nextConfig, userConfig) {
       nextConfig[key] = userConfig[key];
     }
   }
-  
+
   return nextConfig;
 }
 
