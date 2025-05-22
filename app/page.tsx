@@ -178,7 +178,7 @@ export default function Home() {
                 src="/logo.webp"
                 alt="Unicoach AI Logo"
                 width={140}
-                height={50}
+                height={60}
                 className="transition-transform duration-300 hover:scale-105"
                 priority // Add priority attribute to above-the-fold images
               />
@@ -250,10 +250,10 @@ export default function Home() {
                     className="relative w-[220px]"
                   >
                     <div className="absolute inset-0 bg-blue-600 rounded-xl blur opacity-20 transform rotate-1"></div>
-                    <button className="relative w-full py-2 px-4 bg-white border-2 border-blue-600 text-blue-600 font-medium rounded-xl flex items-center justify-center space-x-3 shadow-md hover:bg-blue-50 transition-all duration-300">
+                    <a href="https://lin.ee/ZHfiSqG" target="_blank" rel="noopener noreferrer" className="relative w-full py-2 px-4 bg-white border-2 border-blue-600 text-blue-600 font-medium rounded-xl flex items-center justify-center space-x-3 shadow-md hover:bg-blue-50 transition-all duration-300">
                       <BookOpen size={16} />
                       <span className="text-base">เริ่มฝึกทำข้อสอบ</span>
-                    </button>
+                    </a>
                   </MotionDiv>
                 </div>
               </div>
@@ -497,7 +497,7 @@ export default function Home() {
             </div>
 
             <div className={`mt-16 text-center ${customAnimations.bounceSubtle}`}>
-              <a href="#start" className="inline-flex items-center bg-gradient-to-r from-blue-600 to-violet-600 text-white px-8 py-4 rounded-full font-bold text-lg hover:shadow-xl transform transition-all duration-300 hover:-translate-y-1">
+              <a href="#cta" className="inline-flex items-center bg-gradient-to-r from-blue-600 to-violet-600 text-white px-8 py-4 rounded-full font-bold text-lg hover:shadow-xl transform transition-all duration-300 hover:-translate-y-1">
                 เริ่มต้นใช้งาน
                 <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
@@ -750,9 +750,9 @@ export default function Home() {
                   <a href="https://www.facebook.com/share/1941rAV3Wr/" className="text-gray-400 hover:text-white transition-colors">
                     <Image src="/facebook.webp" alt="Facebook" width={20} height={20} />
                   </a>
-                  {/* <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                    <Image src="/tiktok2.png" alt="TikTok" width={20} height={20} />
-                  </a> */}
+                  <a href="https://lin.ee/ZHfiSqG" className="text-gray-400 hover:text-white transition-colors">
+                    <Image src="/line.webp" alt="Line" width={20} height={20} />
+                  </a> 
                 </div>
               </div>
 
@@ -763,8 +763,7 @@ export default function Home() {
                   <li className="flex items-center"><Mail className="h-4 w-4 mr-2 text-blue-400" /> admin@uniclass.io</li>
                   <li className="flex items-center"><Phone className="h-4 w-4 mr-2 text-blue-400" /> 09-178-24562</li>
                   <li className="flex items-center"><Facebook className="h-4 w-4 mr-2 text-blue-400" />Unicoach Facebook</li>
-                  <li><a href="#" className="text-gray-300 hover:text-white transition-colors">นโยบายความเป็นส่วนตัว</a></li>
-                  <li><a href="#" className="text-gray-300 hover:text-white transition-colors">เงื่อนไขการใช้งาน</a></li>
+                  
                 </ul>
               </div>
             </div>
@@ -772,8 +771,8 @@ export default function Home() {
             <div className="mt-10 pt-6 border-t border-gray-800 text-center">
               <p className="text-gray-300" suppressHydrationWarning>
                 &copy; {new Date().getFullYear()} Unicoach AI. All rights reserved.
-                <span className="ml-4" suppressHydrationWarning>{new Date().toLocaleTimeString()}</span>
-                <TimeDisplay />
+                
+                
               </p>
             </div>
           </div>
