@@ -51,28 +51,24 @@ export const metadata: Metadata = {
         description: 'แพลตฟอร์ม AI ที่ช่วยให้นักเรียนเตรียมสอบเข้าโรงเรียนชั้นนำได้อย่างมีประสิทธิภาพ',
         images: ['https://unicoach.ai/og-image.jpg'],
     },
+    //favicon configuration
     icons: {
         icon: [
-            { url: '/favicon.ico', sizes: '32x32' },
+            { url: '/favicon.ico', sizes: 'any' }, // Primary favicon
             { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
             { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
         ],
         apple: [
             { url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' },
         ],
-        shortcut: '/favicon.ico',
+        shortcut: [
+            { url: '/favicon.ico' }
+        ],
         other: [
             {
-                rel: 'icon',
-                url: '/android-chrome-192x192.png',
-                sizes: '192x192',
-                type: 'image/png',
-            },
-            {
-                rel: 'icon',
-                url: '/android-chrome-512x512.png',
-                sizes: '512x512',
-                type: 'image/png',
+                rel: 'mask-icon',
+                url: '/safari-pinned-tab.svg',
+                color: '#FF6B00',
             },
         ],
     },
@@ -83,5 +79,7 @@ export const metadata: Metadata = {
     },
     other: {
         'theme-color': '#FF6B00', // Primary color from your CSS
+        'msapplication-TileColor': '#FF6B00',
+        'msapplication-config': '/browserconfig.xml',
     },
 };
