@@ -70,6 +70,9 @@ export const metadata: Metadata = {
     manifest: '/site.webmanifest',
     verification: {
         google: 'google-site-verification-code', // Replace with your actual verification code
+         other: {
+            'facebook-domain-verification': 'rk9ftxalfwfe4ojwwxgfgm4897u9ev'
+        }
     },
     other: {
         'theme-color': '#FF6B00', // Primary color from your CSS
