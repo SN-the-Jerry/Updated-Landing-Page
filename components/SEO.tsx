@@ -1,24 +1,7 @@
 import React from 'react'
-import Head from 'next/head'
 import StructuredData from './StructuredData'
 
-interface SEOProps {
-  title?: string
-  description?: string
-  canonical?: string
-  ogImage?: string
-  ogType?: string
-  twitterHandle?: string
-}
-
-export default function SEO({
-  title = 'Unicoach AI | แพลตฟอร์มเตรียมสอบเข้าด้วย AI สำหรับนักเรียน ม.1 และ ม.4',
-  description = 'Unicoach AI ช่วยให้นักเรียนเตรียมสอบเข้าโรงเรียนชั้นนำได้อย่างมีประสิทธิภาพ ด้วยการวิเคราะห์จุดแข็งจุดอ่อนและสร้างแบบฝึกหัดเฉพาะบุคคล',
-  canonical = 'https://unicoach.ai',
-  ogImage = 'https://unicoach.ai/og-image.jpg',
-  ogType = 'website',
-  twitterHandle = '@unicoach'
-}: SEOProps) {
+export default function SEO() {
   // FAQ data for structured data
   const faqData = {
     questions: [
@@ -44,11 +27,10 @@ export default function SEO({
   // Organization data for structured data
   const organizationData = {
     name: 'Unicoach AI',
-    url: 'https://unicoach.ai',
-    logo: 'https://unicoach.ai/logo.svg',
+    url: 'https://unicoach.cc',
+    logo: 'https://unicoach.cc/logo.svg',
     sameAs: [
-      'https://facebook.com/unicoach.ai',
-      'https://tiktok.com/@unicoach'
+      'https://facebook.com/unicoach.cc',
     ],
     contactPoint: [
       {
@@ -63,7 +45,7 @@ export default function SEO({
   // Website data for structured data
   const websiteData = {
     name: 'Unicoach AI',
-    url: 'https://unicoach.ai'
+    url: 'https://unicoach.cc'
   };
 
   // Service data for structured data
@@ -71,19 +53,13 @@ export default function SEO({
     name: 'Unicoach AI สำหรับเตรียมสอบเข้า',
     description: 'แพลตฟอร์ม AI ที่ช่วยให้นักเรียนเตรียมสอบเข้าโรงเรียนชั้นนำได้อย่างมีประสิทธิภาพ',
     providerName: 'Unicoach AI',
-    providerUrl: 'https://unicoach.ai',
+    providerUrl: 'https://unicoach.cc',
     serviceType: 'Education Technology',
     areaServed: 'Thailand'
   };
 
   return (
     <>
-      <Head>
-        {/* Additional meta tags not covered by Next.js Metadata */}
-        <meta name="author" content="Unicoach AI" />
-        <meta name="copyright" content={`Copyright © ${new Date().getFullYear()} Unicoach AI`} />
-      </Head>
-
       {/* Structured Data */}
       <StructuredData type="Organization" data={organizationData} />
       <StructuredData type="WebSite" data={websiteData} />

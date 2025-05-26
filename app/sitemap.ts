@@ -1,18 +1,16 @@
 import { MetadataRoute } from 'next'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://unicoach.ai'
+  const baseUrl = 'https://unicoach.cc'
   
   // Main pages
   const routes = [
     '',
+    '/home',
     '/about',
-    '/contact',
-    '/pricing',
     '/faq',
-    '/blog',
-    '/terms',
-    '/privacy',
+    '/contact',
+    
   ].map((route) => ({
     url: `${baseUrl}${route}`,
     lastModified: new Date(),

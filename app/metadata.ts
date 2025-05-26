@@ -24,33 +24,28 @@ export const metadata: Metadata = {
         },
     },
     alternates: {
-        canonical: 'https://unicoach.ai',
+        canonical: 'https://unicoach.cc',
         languages: {
-            'th-TH': 'https://unicoach.ai',
+            'th-TH': 'https://unicoach.cc',
         },
     },
-    openGraph: {
+     openGraph: {
         type: 'website',
         locale: 'th_TH',
-        url: 'https://unicoach.ai',
+        url: 'https://unicoach.cc',
         title: 'Unicoach AI | แพลตฟอร์มเตรียมสอบเข้าด้วย AI',
         description: 'แพลตฟอร์ม AI ที่ช่วยให้นักเรียนเตรียมสอบเข้าโรงเรียนชั้นนำได้อย่างมีประสิทธิภาพ ด้วยการวิเคราะห์จุดแข็งจุดอ่อนและสร้างแบบฝึกหัดเฉพาะบุคคล',
         siteName: 'Unicoach AI',
         images: [
             {
-                url: 'https://unicoach.ai/og-image.jpg',
+                url: 'https://unicoach.cc/og-image.jpg',
                 width: 1200,
                 height: 630,
                 alt: 'Unicoach AI Logo',
             },
         ],
-    },
-    twitter: {
-        card: 'summary_large_image',
-        title: 'Unicoach AI | แพลตฟอร์มเตรียมสอบเข้าด้วย AI',
-        description: 'แพลตฟอร์ม AI ที่ช่วยให้นักเรียนเตรียมสอบเข้าโรงเรียนชั้นนำได้อย่างมีประสิทธิภาพ',
-        images: ['https://unicoach.ai/og-image.jpg'],
-    },
+    }, 
+    
     //favicon configuration
     icons: {
         icon: [
@@ -75,7 +70,6 @@ export const metadata: Metadata = {
     manifest: '/site.webmanifest',
     verification: {
         google: 'google-site-verification-code', // Replace with your actual verification code
-        yandex: 'yandex-verification-code', // Replace with your actual verification code if you use Yandex
     },
     other: {
         'theme-color': '#FF6B00', // Primary color from your CSS
