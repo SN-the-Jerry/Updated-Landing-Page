@@ -18,6 +18,7 @@ export { metadata, viewport };
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   const gtmId = process.env.NEXT_PUBLIC_GTM_ID || 'GTM-PG8P7JBS';
   const metaPixelId = process.env.NEXT_PUBLIC_META_PIXEL_ID || '4171444363089620';
+  const lineTagId = process.env.NEXT_PUBLIC_LINE_TAG_ID || 'eec77ff1-d224-4314-a629-c68284667dec';
 
   return (
     <html lang="th" className={`scroll-smooth ${ibmPlexSansThai.className}`} suppressHydrationWarning={true}>
@@ -36,10 +37,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="preconnect" href="https://www.googletagmanager.com" crossOrigin="" />
         {/* Preconnect to Meta Pixel domain */}
         <link rel="preconnect" href="https://connect.facebook.net" crossOrigin="" />
+        <link rel="preconnect" href="https://d.line-scdn.net" crossOrigin="" />
       </head>
       <body className="font-ibm-plex-sans-thai">
         {children}
-        <ClientScripts gtmId={gtmId} metaPixelId={metaPixelId} />
+        <ClientScripts gtmId={gtmId} metaPixelId={metaPixelId} lineTagId={lineTagId}/>
       </body>
     </html>
   );

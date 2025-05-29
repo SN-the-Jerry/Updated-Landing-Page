@@ -56,6 +56,13 @@ export default function Home() {
   const [isMounted, setIsMounted] = useState<boolean>(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState<boolean>(false);
 
+  // ADD THIS FUNCTION HERE - LINE Event Tracking Function
+  const trackLineEvent = (eventName: string, parameters?: any) => {
+    if (typeof window !== 'undefined' && window._lt) {
+      window._lt('track', eventName, parameters);
+    }
+  };
+
   // new effect for performance optimization
   useEffect((): (() => void) => {
     document.documentElement.style.setProperty('contain', 'content');
@@ -250,7 +257,11 @@ export default function Home() {
                     className="relative w-[220px]"
                   >
                     <div className="absolute inset-0 bg-blue-600 rounded-xl blur opacity-20 transform rotate-1"></div>
-                    <a href="https://lin.ee/ZHfiSqG" target="_blank" rel="noopener noreferrer" className="relative w-full py-2 px-4 bg-white border-2 border-blue-600 text-blue-600 font-medium rounded-xl flex items-center justify-center space-x-3 shadow-md hover:bg-blue-50 transition-all duration-300">
+                    <a href="https://lin.ee/ZHfiSqG" target="_blank" rel="noopener noreferrer" onClick={() => trackLineEvent('AddFriend', {
+                      event_category: 'engagement',
+                      event_label: 'line_add_friend_hero',
+                      page_location: 'hero_section'
+                    })} className="relative w-full py-2 px-4 bg-white border-2 border-blue-600 text-blue-600 font-medium rounded-xl flex items-center justify-center space-x-3 shadow-md hover:bg-blue-50 transition-all duration-300">
                       <BookOpen size={16} />
                       <span className="text-base">เริ่มฝึกทำข้อสอบ</span>
                     </a>
@@ -260,7 +271,6 @@ export default function Home() {
 
               {/* Image display - Larger display with proper positioning */}
               <div className="relative w-full h-[400px]">
-                <div className="rounded-2xl bg-blue-100/30 border border-blue-200"></div>
                 <Image
                   src="/4.webp"
                   alt="นักเรียนกำลังใช้ Unicoach AI"
@@ -708,6 +718,11 @@ export default function Home() {
                   href="https://lin.ee/ZHfiSqG"
                   target="_blank"
                   rel="noopener noreferrer"
+                  onClick={() => trackLineEvent('AddFriend', {
+                    event_category: 'conversion',
+                    event_label: 'line_add_friend_cta',
+                    page_location: 'cta_section'
+                  })}
                   className="inline-flex items-center justify-center bg-gradient-to-r from-emerald-600 to-emerald-800 text-white font-medium rounded-lg px-4 py-2 hover:from-green-600 hover:to-green-500 transition-all duration-300 shadow-md"
                 >
                   <img src="/line.webp" alt="LINE" width={30} height={30} className="mr-3 transition-transform" />
@@ -750,9 +765,15 @@ export default function Home() {
                   <a href="https://www.facebook.com/share/1941rAV3Wr/" className="text-gray-400 hover:text-white transition-colors">
                     <Image src="/facebook.webp" alt="Facebook" width={20} height={20} />
                   </a>
-                  <a href="https://lin.ee/ZHfiSqG" className="text-gray-400 hover:text-white transition-colors">
+                  <a href="https://lin.ee/ZHfiSqG"
+                    onClick={() => trackLineEvent('AddFriend', {
+                      event_category: 'engagement',
+                      event_label: 'line_add_friend_footer',
+                      page_location: 'footer'
+                    })}
+                    className="text-gray-400 hover:text-white transition-colors">
                     <Image src="/line.webp" alt="Line" width={20} height={20} />
-                  </a> 
+                  </a>
                 </div>
               </div>
 
@@ -763,7 +784,7 @@ export default function Home() {
                   <li className="flex items-center"><Mail className="h-4 w-4 mr-2 text-blue-400" /> admin@uniclass.io</li>
                   <li className="flex items-center"><Phone className="h-4 w-4 mr-2 text-blue-400" /> 09-178-24562</li>
                   <li className="flex items-center"><Facebook className="h-4 w-4 mr-2 text-blue-400" />Unicoach Facebook</li>
-                  
+
                 </ul>
               </div>
             </div>
@@ -771,8 +792,8 @@ export default function Home() {
             <div className="mt-10 pt-6 border-t border-gray-800 text-center">
               <p className="text-gray-300" suppressHydrationWarning>
                 &copy; {new Date().getFullYear()} Unicoach AI. All rights reserved.
-                
-                
+
+
               </p>
             </div>
           </div>

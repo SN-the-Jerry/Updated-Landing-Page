@@ -35,6 +35,7 @@ const nextConfig = {
   env: {
     NEXT_PUBLIC_GTM_ID: process.env.NEXT_PUBLIC_GTM_ID,
     NEXT_PUBLIC_META_PIXEL_ID: process.env.NEXT_PUBLIC_META_PIXEL_ID,
+    NEXT_PUBLIC_LINE_TAG_ID: process.env.NEXT_PUBLIC_LINE_TAG_ID,
   },
   // Add webpack analyzer if you want to analyze your bundle size
   webpack: (config, { isServer }) => {
@@ -123,3 +124,4 @@ function mergeConfig(nextConfig, userConfig) {
 }
 
 export default mergeConfig(nextConfig, userConfig);
+
